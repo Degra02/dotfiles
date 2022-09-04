@@ -192,7 +192,7 @@ for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-
+for_window [class="sfml-window"] floating enable sticky enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -256,7 +256,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf
 exec --no-startup-id numlockx off
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -272,6 +272,8 @@ exec xinput set-prop 13 351 1
 exec xinput set-prop 13 338 1
 exec xinput set-prop 13 278 1 
 
+# Mouse configuration
+exec xinput set-prop 16 317 0
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -319,8 +321,8 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-gaps inner 12
-gaps outer -4
+gaps inner 10
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -334,7 +336,6 @@ smart_gaps on
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 for_window [class="^.*"] border pixel 3 
-
 
 # Press $mod+Shift+g to enter the gap mode. 
 # Choose o or i for modifying outer/inner gaps.
