@@ -191,9 +191,13 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 
 # SFML Personal windows
-for_window [class="Physics Engine"] floating enable sticky enable border normal 
-floating_maximum_size -1 x -1
-for_window [class=floating] move position 1000 1000
+for_window [class="EnGino"] floating enable sticky enable border pixel 3 
+for_window [class="Particles"] floating enable sticky enable border pixel 3 
+for_window [class="NovaBug"] floating enable
+for_window [class="SnakeGame"] floating enable sticky enable border pixel 3
+
+# Bitwarden
+for_window [class="Bitwarden"] floating enable sticky enable border pixel 3
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -263,15 +267,17 @@ exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id bluetoothctl power off
 
 # Notifications
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
 
 
 # Touchpad configuration
-exec xinput set-prop 13 329 0.6
+exec xinput set-prop 13 328 0.6
 exec xinput set-prop 13 351 1 
-exec xinput set-prop 13 338 1
+exec xinput set-prop 13 337 1
+exec xinput set-prop 13 348 1, 1
 exec xinput set-prop 13 278 1 
 
 # Mouse configuration
