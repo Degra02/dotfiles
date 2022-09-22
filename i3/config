@@ -57,7 +57,7 @@ bindsym XF86AudioMute exec --no-startup-id i3-volume mute -nypl
 bindsym $mod+Shift+p exec $myTerm -o font.size=8 -e 'bpytop'
 
 # NetworkManager
-bindsym $mod+Shift+w exec --no-startup-id  $myTerm -e nmcli device wifi
+bindsym $mod+Shift+w exec --no-startup-id ~/git_repos/rofi-wifi-menu/rofi-wifi-menu.sh
 bindsym $mod+Mod1+c exec --no-startup-id $myTerm -e nmcli device connect wlan0 --ask
 
 # Screenshots
@@ -192,12 +192,15 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 
 # SFML Personal windows
 for_window [class="EnGino"] floating enable sticky enable border pixel 3 
-for_window [class="Particles"] floating enable sticky enable border pixel 3 
 for_window [class="NovaBug"] floating enable
-for_window [class="SnakeGame"] floating enable sticky enable border pixel 3
+for_window [class="SnakeGame"] floating enable border pixel 3
 
 # Bitwarden
 for_window [class="Bitwarden"] floating enable sticky enable border pixel 3
+
+#Calendar
+for_window [class="Calendar"] floating enable border pixel 3
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -215,7 +218,7 @@ bindsym Mod1+Shift+r restart
 
 set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id i3lock-fancy -p
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -227,9 +230,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym --release XF86PowerOff mode "$mode_system"
-
-# Lock screen
-bindsym $mod+Shift+l exec --no-startup-id blurlock
 
 
 # Resize window (you can also use the mouse for that)
@@ -274,14 +274,12 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 
 # Touchpad configuration
-exec xinput set-prop 13 328 0.6
-exec xinput set-prop 13 351 1 
-exec xinput set-prop 13 337 1
-exec xinput set-prop 13 348 1, 1
+exec xinput set-prop 13 325 0.6
+exec xinput set-prop 13 334 1 
+exec xinput set-prop 13 345 1, 1
+exec xinput set-prop 13 347 1
 exec xinput set-prop 13 278 1 
 
-# Mouse configuration
-exec xinput set-prop 16 317 0
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
