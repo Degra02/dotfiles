@@ -57,7 +57,7 @@ bindsym XF86AudioMute exec --no-startup-id i3-volume mute -nypl
 bindsym $mod+Shift+p exec $myTerm -o font.size=8 -e 'bpytop'
 
 # NetworkManager
-bindsym $mod+Shift+w exec --no-startup-id ~/git_repos/rofi-wifi-menu/rofi-wifi-menu.sh
+bindsym $mod+Mod1+w exec --no-startup-id ~/git_repos/rofi-wifi-menu/rofi-wifi-menu.sh
 bindsym $mod+Mod1+c exec --no-startup-id $myTerm -e nmcli device connect wlan0 --ask
 
 # Screenshots
@@ -81,6 +81,7 @@ bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
+bindsym Mod1+Tab workspace back_and_forth
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -93,8 +94,8 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -176,18 +177,14 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
 # assign [class="Firefox"] $ws2
-# assign [class="Pcmanfm"] $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
+# for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 
 # SFML Personal windows
@@ -214,11 +211,15 @@ bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+
+
 # Set shut down, restart and locking 
 
 set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock-fancy -p
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -341,7 +342,7 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
-for_window [class="^.*"] border pixel 3 
+for_window [class="^.*"] border pixel 1 
 
 # Press $mod+Shift+g to enter the gap mode. 
 # Choose o or i for modifying outer/inner gaps.
@@ -383,3 +384,22 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# plasma-i3 stuff
+exec --no-startup-id wmctrl -c Plasma
+# Kill the wallpaper window set by Plasma*
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+# Set Plasma dialogs and pop ups as floating so they won't get tiled
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
