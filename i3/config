@@ -2,8 +2,8 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
-new_float normal
+# ew_window pixel 1
+#new_float normal
 
 # Hide borders
 hide_edge_borders none
@@ -44,13 +44,13 @@ bindsym $mod+9 exec --no-startup-id ~/.config/rofi/applets/bin/battery.sh
 #exec --no-startup-id pa-applet
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "brightnessctl set +5%; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "brightnessctl set 5%-; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +5%"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 5%-"
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id i3-volume up 5 -nypl -x 120
-bindsym XF86AudioLowerVolume exec --no-startup-id i3-volume down 5 -nypl -x 120
-bindsym XF86AudioMute exec --no-startup-id i3-volume mute -nypl
+bindsym XF86AudioRaiseVolume exec --no-startup-id "i3-volume up 5 -x 100"
+bindsym XF86AudioLowerVolume exec --no-startup-id "i3-volume down 5 -x 100"
+bindsym XF86AudioMute exec --no-startup-id i3-volume mute
 
 # Start Applications
 # bindsym $mod+b exec firefox
@@ -110,7 +110,7 @@ exec --no-startup-id  $HOME/.config/i3/i3-master-stack/i3_master
 # swap to master node
 bindsym $mod+m nop swap master 
 # go to master node
-bindsym $mod+shift+m nop go master 
+#bindsym $mod+shift+m nop go master 
 # enable/disable master layout in current workspace
 #bindsym $mod+alt+m nop master toggle 
 
@@ -182,8 +182,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
-# for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 
@@ -198,6 +196,9 @@ for_window [class="Bitwarden"] floating enable sticky enable border pixel 3
 #Calendar
 for_window [class="Calendar"] floating enable border pixel 3
 
+for_window [class="Telegram"] border pixel 0
+
+for_window [class="Cloth"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -259,7 +260,8 @@ mode "resize" {
 }
 
 # Autostart applications
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar.personal/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf
 exec --no-startup-id numlockx off
@@ -275,43 +277,11 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 
 # Touchpad configuration
-exec xinput set-prop 13 325 0.6
-exec xinput set-prop 13 334 1 
-exec xinput set-prop 13 345 1, 1
-exec xinput set-prop 13 347 1
-exec xinput set-prop 13 278 1 
+exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Accel Speed" 0.8
+exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Tapping Enabled" 1 
+exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Click Methods Available" 1, 1
+exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Middle Emulatio Enabled" 1
 
-
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your 
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
