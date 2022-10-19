@@ -59,7 +59,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
+			/bin/i3lock-fancy -p
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi
@@ -70,6 +70,7 @@ case $chosen in
 			mpc -q pause
 			amixer set Master mute
 			systemctl suspend
+      betterlockscreen -l --off 3 
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0
         else
@@ -84,7 +85,9 @@ case $chosen in
 			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-				i3-msg exit
+				i3exit logout 
+        qdbus org.kde.ksmserver /KSMServer logout 0 1 0
+
 			fi
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0

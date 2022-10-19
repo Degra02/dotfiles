@@ -232,7 +232,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym --release XF86PowerOff mode "$mode_system"
-
+#bindsym --release XF86PowerOff exec ~/.config/polybar/forest/scripts/powermenu.sh
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -263,7 +263,7 @@ mode "resize" {
 #exec_always --no-startup-id $HOME/.config/polybar.personal/launch.sh
 exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf
+exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf --no-fading-openclose
 exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -312,7 +312,7 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
-for_window [class="^.*"] border pixel 1 
+for_window [class="^.*"] border pixel 0 
 
 # Press $mod+Shift+g to enter the gap mode. 
 # Choose o or i for modifying outer/inner gaps.
