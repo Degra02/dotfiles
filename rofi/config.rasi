@@ -1,10 +1,4 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Configuration For Rofi Version: 1.7.3
- **/
+@theme "/usr/share/rofi/themes/Monokai.rasi"
 
 configuration {
 	/*---------- General setting ----------*/

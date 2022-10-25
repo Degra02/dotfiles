@@ -56,6 +56,9 @@ bindsym XF86AudioMute exec --no-startup-id i3-volume mute
 # bindsym $mod+b exec firefox
 bindsym $mod+Shift+p exec $myTerm -o font.size=8 -e 'bpytop'
 
+# Firefox
+bindsym $mod+b exec firefox
+
 # NetworkManager
 bindsym $mod+Mod1+w exec --no-startup-id ~/git_repos/rofi-wifi-menu/rofi-wifi-menu.sh
 bindsym $mod+Mod1+c exec --no-startup-id $myTerm -e nmcli device connect wlan0 --ask
@@ -82,7 +85,6 @@ bindsym $mod+Shift+Right move right
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 bindsym Mod1+Tab workspace back_and_forth
-bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
@@ -184,6 +186,7 @@ for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Obs Studio"] floating enable border normal
 
 # SFML Personal windows
 for_window [class="EnGino"] floating enable sticky enable border pixel 3 
@@ -231,8 +234,11 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym --release XF86PowerOff mode "$mode_system"
-#bindsym --release XF86PowerOff exec ~/.config/polybar/forest/scripts/powermenu.sh
+# bindsym --release XF86PowerOff mode "$mode_system"
+
+bindsym --release XF86PowerOff exec --no-startup-id "~/Scripts/rofi_power.sh"
+
+# bindsym --release XF86PowerOff exec --no-startup-id "/usr/lib/ksmserver-logout-greeter _"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -253,6 +259,13 @@ mode "resize" {
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Shift+Left resize shrink width 50 px or 50 ppt
+        bindsym Shift+Down resize grow height 50 px or 50 ppt
+        bindsym Shift+Up resize shrink height 50 px or 50 ppt
+        bindsym Shift+Right resize grow width 50 px or 50 ppt
+
+
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -373,3 +386,5 @@ for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
+
+for_window [class="ksmserver-logout-greeter"] fullscreen enable
