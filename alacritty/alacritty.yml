@@ -34,7 +34,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
+    x: 3
     y: 1
 
   # Spread additional padding evenly around the terminal content.
@@ -118,15 +118,15 @@ font:
     #   - (Windows) Consolas
     #family: Source Code Pro
     # family: CodeNewRoman Nerd Font
-    #family: RobotoMono Nerd Font
-    family: Hack
+    # family: RobotoMono Nerd Font
+    family: JetBrainsMono Nerd Font Mono
+    # family: SF Mono Nerd Font
     # family: JetBrains Mono
     #family: UbuntuMono Nerd Font
     #family: Monofur Nerd Font
     #family: TerminessTTF Nerd Font
     #family: Mononoki Nerd Font
-
-    # The `style` can be specified to pick a specific face.
+       # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
@@ -138,7 +138,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: Hack
+    family: JetBrainsMono Nerd Font Mono
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -154,7 +154,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font Mono
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -173,7 +173,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font Mono
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -187,7 +187,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 9.5
+  size: 10.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -273,7 +273,7 @@ schemes:
       focused_match:
         foreground: '#44475a'
         background: '#ffb86c'
-      bar:
+      footer_bar:
         background: '#282a36'
         foreground: '#f8f8f2'
     line_indicator:
