@@ -1,5 +1,9 @@
+#!/bin/bash
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+
+# keyboard layout
+# setxkbmap us
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 # ew_window pixel 1
@@ -29,7 +33,9 @@ bindsym $mod+Shift+q kill
 
 # start rofi launcher
 # bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launchers/type-2/style-2.rasi
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-5/launcher.sh
+# bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-5/launcher.sh
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
 
 # start rofi bluetooth
 bindsym $mod+Mod1+b exec --no-startup-id rofi-bluetooth
@@ -87,6 +93,10 @@ workspace_auto_back_and_forth yes
 bindsym Mod1+Tab workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
+# split vertically and move to the right
+# bindsym $mod+Shift+v
+
+
 # split orientation
 bindsym $mod+z split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
@@ -108,7 +118,7 @@ bindsym $mod+space focus mode_toggle
 
 
 # Master and Stack layout
-exec --no-startup-id  $HOME/.config/i3/i3-master-stack/i3_master
+# exec --no-startup-id  $HOME/.config/i3/i3-master-stack/i3_master
 # swap to master node
 bindsym $mod+m nop swap master 
 # go to master node
@@ -119,7 +129,7 @@ bindsym $mod+m nop swap master
 
 # toggle sticky
 # bindsym $mod+Shift+s sticky toggle
-# bindsym $mod+Shift+s exec ~/.i3/i3-display-swap.sh
+bindsym $mod+Shift+s exec ~/.i3/i3-display-swap.sh
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -201,7 +211,14 @@ for_window [class="Calendar"] floating enable border pixel 3
 
 for_window [class="Telegram"] border pixel 0
 
-for_window [class="Cloth"] floating enable
+
+# Qt windows => Title of each project
+for_window [class="test"] floating enable border pixel 1
+
+
+# For Qemu
+for_window [class="Vncviewer"] floating enable border pixel 5
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -237,7 +254,7 @@ mode "$mode_system" {
 # bindsym --release XF86PowerOff mode "$mode_system"
 
 bindsym --release XF86PowerOff exec --no-startup-id "~/Scripts/rofi_power.sh"
-
+bindsym --release $mod+Shift+0 exec --no-startup-id "~/Scripts/rofi_power.sh"
 # bindsym --release XF86PowerOff exec --no-startup-id "/usr/lib/ksmserver-logout-greeter _"
 
 # Resize window (you can also use the mouse for that)
@@ -279,11 +296,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf --no-fading-openclose
 exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id bluetoothctl power off
+
+# conky
+# exec_always --no-startup-id kill %conky
+exec --no-startup-id conky
 
 # Notifications
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
@@ -291,11 +311,11 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # Touchpad configuration
 exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Accel Speed" 0.8
-exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Tapping Enabled" 1 
+exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Tapping Enabled" 1
 exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Click Methods Available" 1, 1
 exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Middle Emulatio Enabled" 1
 
-
+exec xinput set-prop "Microsoft Surface 045E:09AF Mouse" "libinput Natural Scrolling Enabled" 0 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          #795f94 #556064 #80FFF9 #FDF6E3  #795f94
@@ -311,7 +331,7 @@ exec xinput set-prop "Microsoft Surface 045E:09AF Touchpad" "libinput Middle Emu
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 8
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.

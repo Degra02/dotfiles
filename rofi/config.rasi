@@ -34,7 +34,7 @@ configuration {
 	drun-reload-desktop-cache: false;
 	drun {
 		/** Parse user desktop files. */
-		parse-user:   true;
+		// parse-user:   true;
 		/** Parse system desktop files. */
 		parse-system: true;
     }
@@ -76,10 +76,10 @@ configuration {
 	display-filebrowser: "Files";
 
 	/*---------- Misc setting ----------*/
-	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	terminal: "alacritty";
+	font: "Hack 18";
 	sort: false;
-	threads: 0;
+	threads: 1;
 	click-to-exit: true;
 /*	ignored-prefixes: "";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
