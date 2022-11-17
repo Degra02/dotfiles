@@ -5,14 +5,28 @@
     "margin": "20 20 0 20",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/language", "keyboard-state", "custom/pacman", "custom/mail", "sway/mode"],
+    "modules-left": ["wlr/workspaces", "hyprland/window"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "backlight", "battery", "tray"],
+    "modules-right": ["pulseaudio", "custom/mem", "temperature", "backlight", "battery", "tray"],
 
 
     //***************************
     //*  Modules configuration  *
     //***************************
+    "hyprland/window": {
+        "format": "-> {}",
+        "separate-outputs": true
+    },
+    
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "focused": "",
+            "unfocused": "",
+            "default": "."
+        },
+        "active-only": false
+    },
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -26,8 +40,8 @@
 
     "sway/language": {
         "format": "{} ",
-	"min-length": 5,
-	"tooltip": false
+	    "min-length": 5,
+	    "tooltip": false
     },
 
     "keyboard-state": {
@@ -38,25 +52,6 @@
             "locked": " ",
             "unlocked": ""
         },
-    },
-
-    "custom/pacman": {
-        "format": "{} ",
-        "interval": 3600,                     			// every hour
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
-        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8,
-        "tooltip": false,
-    },
-
-    "custom/mail": {
-        "format": "{} ",
-        "exec": "$HOME/.config/waybar/scripts/checkgmail.py",
-        "interval": 120,
-        "on-click": "google-chrome-stable https://mail.google.com/mail/u/0/#inbox ; pkill -SIGRTMIN+9 waybar",
-        "signal": 9,
-        "tooltip": false,
     },
 
     "sway/mode": {
@@ -108,9 +103,9 @@
 
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false,

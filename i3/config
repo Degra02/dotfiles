@@ -211,6 +211,8 @@ for_window [class="Calendar"] floating enable border pixel 3
 
 for_window [class="Telegram"] border pixel 0
 
+for_window [title="splash" class="jetbrains-clion"] floating enable
+
 
 # Qt windows => Title of each project
 for_window [class="test"] floating enable border pixel 1
@@ -293,7 +295,7 @@ mode "resize" {
 #exec_always --no-startup-id $HOME/.config/polybar.personal/launch.sh
 exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf --no-fading-openclose
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf --no-fading-openclose
 exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
 # exec --no-startup-id xautolock -time 10 -locker blurlock
@@ -388,23 +390,3 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# plasma-i3 stuff
-exec --no-startup-id wmctrl -c Plasma
-# Kill the wallpaper window set by Plasma*
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-# Set Plasma dialogs and pop ups as floating so they won't get tiled
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [class="systemsettings"] floating enable
-for_window [class="plasmashell"] floating enable;
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
-
-for_window [class="ksmserver-logout-greeter"] fullscreen enable
