@@ -1,0 +1,32 @@
+#!TOML
+theme = "bogster"
+
+[editor]
+shell = ["zsh", "-c"]
+cursorline = false
+
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+
+# Keymappigs
+[keys.normal]
+C-s = ":w" # Save
+C-y = ":clipboard-yank" # Copy to clipboard
+C-p = "hover" # Documentation
+
+
+[keys.insert]
+C-c = "normal_mode"
+C-s = ":w" # Save file
+C-y = ":clipboard-yank" # Copy to clipboard
+C-p = "hover" # Documentation
