@@ -31,7 +31,7 @@ window#waybar.hidden {
 
 #workspaces button.persistent {
     color: #7c818c;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -44,8 +44,9 @@ window#waybar.hidden {
     background: #7c818c;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: white;
+    font-size: 20px;
 }
 
 #language {
