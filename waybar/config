@@ -7,12 +7,33 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "hyprland/window"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "temperature", "backlight", "battery", "tray"],
+    "modules-right": ["disk", "custom/mem", "temperature", "pulseaudio", "backlight", "battery", "network","tray"],
 
 
     //***************************
     //*  Modules configuration  *
     //***************************
+    
+    "disk": {
+        "interval": 60,
+        "format": "  {free}  ",
+        "path": "/"
+    },
+    
+    "network": {
+        "interface": "wlan0",
+        "format": "  {ifname}  ",
+        "format-wifi": "  {essid} ({signalStrength}%)  ",
+        "format-ethernet": "  {ipaddr}/{cidr}   ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": " {essid} ({signalStrength}%)  ",
+        "tooltip-format-ethernet": " {ifname} ",
+        "tooltip-format-disconnected": "  Disconnected  ",
+        "max-length": 60,
+        "on-click": "wofi-wifi-menu"
+    },
+    
     "hyprland/window": {
         "format": "-> {}",
         "separate-outputs": true
@@ -90,6 +111,7 @@
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}'",
         "tooltip": false,
+        "on-click": "kitty bpytop"
     },
 
     "temperature": {
