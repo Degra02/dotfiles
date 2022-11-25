@@ -20,7 +20,6 @@ window:
   #dimensions:
   #  columns: 0
   #  lines: 0
-
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -28,7 +27,6 @@ window:
   #position:
   #  x: 0
   #  y: 0
-
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
@@ -57,7 +55,6 @@ window:
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
   #decorations: full
-
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -68,7 +65,6 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   # startup_mode: Fullscreen
-
   # Window title
   title: Alacritty
 
@@ -78,22 +74,18 @@ window:
     instance: Alacritty
     # General application class
     general: Alacritty
-
   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
-
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
   history: 5000
-
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
   #multiplier: 3
-
   # Scroll to the bottom when new text is written to the terminal.
   #auto_scroll: false
 
@@ -105,7 +97,6 @@ scrolling:
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
 #tabspaces: 8
-
 # Font configuration
 font:
   # Normal (roman) font face
@@ -126,7 +117,7 @@ font:
     #family: Monofur Nerd Font
     #family: TerminessTTF Nerd Font
     #family: Mononoki Nerd Font
-       # The `style` can be specified to pick a specific face.
+    # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
@@ -144,7 +135,6 @@ font:
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -163,7 +153,6 @@ font:
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-
     # The `style` can be specified to pick a specific face.
     style: Italic
 
@@ -182,26 +171,23 @@ font:
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 10.5
+  size: 14.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
     y: 1
-
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
   #glyph_offset:
   #  x: 0
   #  y: 0
-
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
@@ -217,7 +203,6 @@ font:
   # This is a global setting and will require a log out or restart to take
   # effect.
   #use_thin_strokes: true
-
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
@@ -226,7 +211,8 @@ draw_bold_text_with_bright_colors: true
 #######################################
 schemes:
   ### Doom One ###
-  DoomOne: &DoomOne
+  DoomOne:
+    &DoomOne
     primary:
       background: '#282c34'
       foreground: '#bbc2cf'
@@ -237,26 +223,27 @@ schemes:
       text: CellForeground
       background: '#3e4451'
     normal:
-      black:   '#1c1f24'
-      red:     '#ff6c6b'
-      green:   '#98be65'
-      yellow:  '#da8548'
-      blue:    '#51afef'
+      black: '#1c1f24'
+      red: '#ff6c6b'
+      green: '#98be65'
+      yellow: '#da8548'
+      blue: '#51afef'
       magenta: '#c678dd'
-      cyan:    '#5699af'
-      white:   '#202328'
+      cyan: '#5699af'
+      white: '#202328'
     bright:
-      black:   '#5b6268'
-      red:     '#da8548'
-      green:   '#4db5bd'
-      yellow:  '#ecbe7b'
-      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      black: '#5b6268'
+      red: '#da8548'
+      green: '#4db5bd'
+      yellow: '#ecbe7b'
+      blue: '#3071db' # This is 2257a0 in Doom Emacs but I lightened it.
       magenta: '#a9a1e1'
-      cyan:    '#46d9ff'
-      white:   '#dfdfdf'
+      cyan: '#46d9ff'
+      white: '#dfdfdf'
 
   ### Dracula ###
-  Dracula: &Dracula
+  Dracula:
+    &Dracula
     primary:
       background: '#282a36'
       foreground: '#f8f8f2'
@@ -283,36 +270,37 @@ schemes:
       text: CellForeground
       background: '#44475a'
     normal:
-      black:   '#000000'
-      red:     '#ff5555'
-      green:   '#50fa7b'
-      yellow:  '#f1fa8c'
-      blue:    '#bd93f9'
+      black: '#000000'
+      red: '#ff5555'
+      green: '#50fa7b'
+      yellow: '#f1fa8c'
+      blue: '#bd93f9'
       magenta: '#ff79c6'
-      cyan:    '#8be9fd'
-      white:   '#bfbfbf'
+      cyan: '#8be9fd'
+      white: '#bfbfbf'
     bright:
-      black:   '#4d4d4d'
-      red:     '#ff6e67'
-      green:   '#5af78e'
-      yellow:  '#f4f99d'
-      blue:    '#caa9fa'
+      black: '#4d4d4d'
+      red: '#ff6e67'
+      green: '#5af78e'
+      yellow: '#f4f99d'
+      blue: '#caa9fa'
       magenta: '#ff92d0'
-      cyan:    '#9aedfe'
-      white:   '#e6e6e6'
+      cyan: '#9aedfe'
+      white: '#e6e6e6'
     dim:
-      black:   '#14151b'
-      red:     '#ff2222'
-      green:   '#1ef956'
-      yellow:  '#ebf85b'
-      blue:    '#4d5b86'
+      black: '#14151b'
+      red: '#ff2222'
+      green: '#1ef956'
+      yellow: '#ebf85b'
+      blue: '#4d5b86'
       magenta: '#ff46b0'
-      cyan:    '#59dffc'
-      white:   '#e6e6d1'
+      cyan: '#59dffc'
+      white: '#e6e6d1'
 
   ### Gruvbox dark ###
-  GruvboxDark: &GruvboxDark
+  GruvboxDark:
     # Default colors
+    &GruvboxDark
     primary:
       # hard contrast: background = '0x1d2021'
       background: '#282828'
@@ -321,87 +309,90 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#282828'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
+      black: '#282828'
+      red: '#cc241d'
+      green: '#98971a'
+      yellow: '#d79921'
+      blue: '#458588'
       magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
+      cyan: '#689d6a'
+      white: '#a89984'
 
     # Bright colors
     bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
+      black: '#928374'
+      red: '#fb4934'
+      green: '#b8bb26'
+      yellow: '#fabd2f'
+      blue: '#83a598'
       magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
+      cyan: '#8ec07c'
+      white: '#ebdbb2'
 
-### Monokai ###
-  MonokaiPro: &MonokaiPro
+  ### Monokai ###
+  MonokaiPro:
     # Default colors
+    &MonokaiPro
     primary:
       background: '#2D2A2E'
       foreground: '#FCFCFA'
 
     # Normal colors
     normal:
-      black:   '#403E41'
-      red:     '#FF6188'
-      green:   '#A9DC76'
-      yellow:  '#FFD866'
-      blue:    '#FC9867'
+      black: '#403E41'
+      red: '#FF6188'
+      green: '#A9DC76'
+      yellow: '#FFD866'
+      blue: '#FC9867'
       magenta: '#AB9DF2'
-      cyan:    '#78DCE8'
-      white:   '#FCFCFA'
+      cyan: '#78DCE8'
+      white: '#FCFCFA'
 
     # Bright colors
     bright:
-      black:   '#727072'
-      red:     '#FF6188'
-      green:   '#A9DC76'
-      yellow:  '#FFD866'
-      blue:    '#FC9867'
+      black: '#727072'
+      red: '#FF6188'
+      green: '#A9DC76'
+      yellow: '#FFD866'
+      blue: '#FC9867'
       magenta: '#AB9DF2'
-      cyan:    '#78DCE8'
-      white:   '#FCFCFA'
+      cyan: '#78DCE8'
+      white: '#FCFCFA'
 
   ### Nord ###
-  Nord: &Nord
+  Nord:
     # Default colors
+    &Nord
     primary:
       background: '#2E3440'
       foreground: '#D8DEE9'
 
     # Normal colors
     normal:
-      black:   '#3B4252'
-      red:     '#BF616A'
-      green:   '#A3BE8C'
-      yellow:  '#EBCB8B'
-      blue:    '#81A1C1'
+      black: '#3B4252'
+      red: '#BF616A'
+      green: '#A3BE8C'
+      yellow: '#EBCB8B'
+      blue: '#81A1C1'
       magenta: '#B48EAD'
-      cyan:    '#88C0D0'
-      white:   '#E5E9F0'
+      cyan: '#88C0D0'
+      white: '#E5E9F0'
 
     # Bright colors
     bright:
-      black:   '#4C566A'
-      red:     '#BF616A'
-      green:   '#A3BE8C'
-      yellow:  '#EBCB8B'
-      blue:    '#81A1C1'
+      black: '#4C566A'
+      red: '#BF616A'
+      green: '#A3BE8C'
+      yellow: '#EBCB8B'
+      blue: '#81A1C1'
       magenta: '#B48EAD'
-      cyan:    '#8FBCBB'
-      white:   '#ECEFF4'
+      cyan: '#8FBCBB'
+      white: '#ECEFF4'
 
   ### Oceanic Next ###
-  OceanicNext: &OceanicNext
+  OceanicNext:
     # Default colors
+    &OceanicNext
     primary:
       background: '#1b2b34'
       foreground: '#d8dee9'
@@ -413,126 +404,130 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#343d46'
-      red:     '#EC5f67'
-      green:   '#99C794'
-      yellow:  '#FAC863'
-      blue:    '#6699cc'
+      black: '#343d46'
+      red: '#EC5f67'
+      green: '#99C794'
+      yellow: '#FAC863'
+      blue: '#6699cc'
       magenta: '#c594c5'
-      cyan:    '#5fb3b3'
-      white:   '#d8dee9'
+      cyan: '#5fb3b3'
+      white: '#d8dee9'
 
     # Bright colors
     bright:
-      black:   '#343d46'
-      red:     '#EC5f67'
-      green:   '#99C794'
-      yellow:  '#FAC863'
-      blue:    '#6699cc'
+      black: '#343d46'
+      red: '#EC5f67'
+      green: '#99C794'
+      yellow: '#FAC863'
+      blue: '#6699cc'
       magenta: '#c594c5'
-      cyan:    '#5fb3b3'
-      white:   '#d8dee9'
+      cyan: '#5fb3b3'
+      white: '#d8dee9'
 
   ### Palenight ###
-  Palenight: &Palenight
+  Palenight:
     # Default colors
+    &Palenight
     primary:
       background: '#292d3e'
       foreground: '#d0d0d0'
 
     # Normal colors
     normal:
-      black:   '#292d3e'
-      red:     '#f07178'
-      green:   '#c3e88d'
-      yellow:  '#ffcb6b'
-      blue:    '#82aaff'
+      black: '#292d3e'
+      red: '#f07178'
+      green: '#c3e88d'
+      yellow: '#ffcb6b'
+      blue: '#82aaff'
       magenta: '#c792ea'
-      cyan:    '#89ddff'
-      white:   '#d0d0d0'
+      cyan: '#89ddff'
+      white: '#d0d0d0'
 
     # Bright colors
     bright:
-      black:   '#434758'
-      red:     '#ff8b92'
-      green:   '#ddffa7'
-      yellow:  '#ffe585'
-      blue:    '#9cc4ff'
+      black: '#434758'
+      red: '#ff8b92'
+      green: '#ddffa7'
+      yellow: '#ffe585'
+      blue: '#9cc4ff'
       magenta: '#e1acff'
-      cyan:    '#a3f7ff'
-      white:   '#ffffff'
+      cyan: '#a3f7ff'
+      white: '#ffffff'
 
   ### Solarized Dark ###
-  SolarizedDark: &SolarizedDark
+  SolarizedDark:
     # Default colors
+    &SolarizedDark
     primary:
       background: '#002b36' # base03
       foreground: '#839496' # base0
 
     # Cursor colors
     cursor:
-      text:   '#002b36' # base03
+      text: '#002b36' # base03
       cursor: '#839496' # base0
 
     # Normal colors
     normal:
-      black:   '#073642' # base02
-      red:     '#dc322f' # red
-      green:   '#859900' # green
-      yellow:  '#b58900' # yellow
-      blue:    '#268bd2' # blue
+      black: '#073642' # base02
+      red: '#dc322f' # red
+      green: '#859900' # green
+      yellow: '#b58900' # yellow
+      blue: '#268bd2' # blue
       magenta: '#d33682' # magenta
-      cyan:    '#2aa198' # cyan
-      white:   '#eee8d5' # base2
+      cyan: '#2aa198' # cyan
+      white: '#eee8d5' # base2
 
     # Bright colors
     bright:
-      black:   '#002b36' # base03
-      red:     '#cb4b16' # orange
-      green:   '#586e75' # base01
-      yellow:  '#657b83' # base00
-      blue:    '#839496' # base0
+      black: '#002b36' # base03
+      red: '#cb4b16' # orange
+      green: '#586e75' # base01
+      yellow: '#657b83' # base00
+      blue: '#839496' # base0
       magenta: '#6c71c4' # violet
-      cyan:    '#93a1a1' # base1
-      white:   '#fdf6e3' # base3
+      cyan: '#93a1a1' # base1
+      white: '#fdf6e3' # base3
 
   ### Solarized Light ###
-  SolarizedLight: &SolarizedLight
+  SolarizedLight:
     # Default colors
+    &SolarizedLight
     primary:
       background: '#fdf6e3' # base3
       foreground: '#657b83' # base00
 
     # Cursor colors
     cursor:
-      text:   '#fdf6e3' # base3
+      text: '#fdf6e3' # base3
       cursor: '#657b83' # base00
 
     # Normal colors
     normal:
-      black:   '#073642' # base02
-      red:     '#dc322f' # red
-      green:   '#859900' # green
-      yellow:  '#b58900' # yellow
-      blue:    '#268bd2' # blue
+      black: '#073642' # base02
+      red: '#dc322f' # red
+      green: '#859900' # green
+      yellow: '#b58900' # yellow
+      blue: '#268bd2' # blue
       magenta: '#d33682' # magenta
-      cyan:    '#2aa198' # cyan
-      white:   '#eee8d5' # base2
+      cyan: '#2aa198' # cyan
+      white: '#eee8d5' # base2
 
     # Bright colors
     bright:
-      black:   '#002b36' # base03
-      red:     '#cb4b16' # orange
-      green:   '#586e75' # base01
-      yellow:  '#657b83' # base00
-      blue:    '#839496' # base0
+      black: '#002b36' # base03
+      red: '#cb4b16' # orange
+      green: '#586e75' # base01
+      yellow: '#657b83' # base00
+      blue: '#839496' # base0
       magenta: '#6c71c4' # violet
-      cyan:    '#93a1a1' # base1
-      white:   '#fdf6e3' # base3
+      cyan: '#93a1a1' # base1
+      white: '#fdf6e3' # base3
 
   ### Tomorrow Night ###
-  TomorrowNight: &TomorrowNight
-     # Default colors
+  TomorrowNight:
+    # Default colors
+    &TomorrowNight
     primary:
       background: '#1d1f21'
       foreground: '#c5c8c6'
@@ -544,26 +539,26 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#1d1f21'
-      red:     '#cc6666'
-      green:   '#b5bd68'
-      yellow:  '#e6c547'
-      blue:    '#81a2be'
+      black: '#1d1f21'
+      red: '#cc6666'
+      green: '#b5bd68'
+      yellow: '#e6c547'
+      blue: '#81a2be'
       magenta: '#b294bb'
-      cyan:    '#70c0ba'
-      white:   '#373b41'
-      grey:    '#4f4b4b'
+      cyan: '#70c0ba'
+      white: '#373b41'
+      grey: '#4f4b4b'
 
     # Bright colors
     bright:
-      black:   '#666666'
-      red:     '#ff3334'
-      green:   '#9ec400'
-      yellow:  '#f0c674'
-      blue:    '#81a2be'
+      black: '#666666'
+      red: '#ff3334'
+      green: '#9ec400'
+      yellow: '#f0c674'
+      blue: '#81a2be'
       magenta: '#b77ee0'
-      cyan:    '#54ced6'
-      white:   '#282a2e'
+      cyan: '#54ced6'
+      white: '#282a2e'
 
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
@@ -579,13 +574,37 @@ schemes:
 # *SolarizedLight
 # *SolarizedDark
 # *TomorrowNight
-
-colors: *MonokaiPro
+colors:
+  name: Chalk (dark)
+  author: Chris Kempson
+  primary:
+    background: "#151515"
+    foreground: "#d0d0d0"
+  cursor:
+    text: "#151515"
+    cursor: "#d0d0d0"
+  normal:
+    black: "#151515"
+    red: "#fb9fb1"
+    green: "#acc267"
+    yellow: "#ddb26f"
+    blue: "#6fc2ef"
+    magenta: "#e1a3ee"
+    cyan: "#12cfc0"
+    white: "#d0d0d0"
+  bright:
+    black: "#505050"
+    red: "#fb9fb1"
+    green: "#acc267"
+    yellow: "#ddb26f"
+    blue: "#6fc2ef"
+    magenta: "#e1a3ee"
+    cyan: "#12cfc0"
+    white: "#f5f5f5"
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
 #######################################
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -611,32 +630,25 @@ colors: *MonokaiPro
 #  animation: EaseOutExpo
 #  duration: 0
 #  color: '#ffffff'
-
 #selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
-  # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
-
+#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+# When set to `true`, selected text will be copied to the primary clipboard.
+#save_to_clipboard: false
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
-
 #cursor:
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
-  #style: Block
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  #unfocused_hollow: true
-
+# Cursor style
+#
+# Values for `style`:
+#   - ▇ Block
+#   - _ Underline
+#   - | Beam
+#style: Block
+# If this is `true`, the cursor will be rendered as a hollow box when the
+# window is not focused.
+#unfocused_hollow: true
 # Live config reload (changes require restart)
 #live_config_reload: true
-
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
@@ -647,16 +659,14 @@ colors: *MonokaiPro
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 #shell:
-#  program: /bin/bash
+program: /bin/zsh
 #  args:
 #    - --login
-
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
-
 # WinPTY backend (Windows only)
 #
 # Alacritty defaults to using the newer ConPTY backend if it is available,
@@ -666,68 +676,57 @@ colors: *MonokaiPro
 # Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
 # even if the ConPTY backend is available.
 #winpty_backend: false
-
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
-
 #debug:
-  # Display the time it takes to redraw each frame.
-  #render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
-
-  # Log level
-  #
-  # Values for `log_level`:
-  #   - None
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  #log_level: Warn
-
-  # Print all received window events.
-  #print_events: false
-
-  # Record all characters and escape sequences as test data.
-  #ref_test: false
-
+# Display the time it takes to redraw each frame.
+#render_timer: false
+# Keep the log file after quitting Alacritty.
+#persistent_logging: false
+# Log level
+#
+# Values for `log_level`:
+#   - None
+#   - Error
+#   - Warn
+#   - Info
+#   - Debug
+#   - Trace
+#log_level: Warn
+# Print all received window events.
+#print_events: false
+# Record all characters and escape sequences as test data.
+#ref_test: false
 #mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  #double_click: { threshold: 300 }
-  #triple_click: { threshold: 300 }
-
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
-
-  #url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a URL.
-    # The URL is always added to the command as the last parameter.
-    #
-    # When set to `None`, URL launching will be disabled completely.
-    #
-    # Default:
-    #   - (macOS) open
-    #   - (Linux/BSD) xdg-open
-    #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
-    #  args: []
-
-    # URL modifiers
-    #
-    # These are the modifiers that need to be held down for opening URLs when clicking
-    # on them. The available modifiers are documented in the key binding section.
-    #modifiers: None
-
+# Click settings
+#
+# The `double_click` and `triple_click` settings control the time
+# alacritty should wait for accepting multiple clicks as one double
+# or triple click.
+#double_click: { threshold: 300 }
+#triple_click: { threshold: 300 }
+# If this is `true`, the cursor is temporarily hidden when typing.
+#hide_when_typing: false
+#url:
+# URL launcher
+#
+# This program is executed when clicking on a text which is recognized as a URL.
+# The URL is always added to the command as the last parameter.
+#
+# When set to `None`, URL launching will be disabled completely.
+#
+# Default:
+#   - (macOS) open
+#   - (Linux/BSD) xdg-open
+#   - (Windows) explorer
+#launcher:
+#  program: xdg-open
+#  args: []
+# URL modifiers
+#
+# These are the modifiers that need to be held down for opening URLs when clicking
+# on them. The available modifiers are documented in the key binding section.
+#modifiers: None
 # Mouse bindings
 #
 # Mouse bindings are specified as a list of objects, much like the key
@@ -749,7 +748,6 @@ colors: *MonokaiPro
 # - `mods` (see key bindings)
 #mouse_bindings:
 #  - { mouse: Middle, action: PasteSelection }
-
 # Key bindings
 #
 # Key bindings are specified as a list of objects. For example, this is the
@@ -851,21 +849,41 @@ colors: *MonokaiPro
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,         mods: Control|Shift, action: Paste                       }
-  - { key: C,         mods: Control|Shift, action: Copy                        }
-  - { key: Insert,    mods: Shift,         action: PasteSelection              }
-  - { key: Key0,      mods: Control,       action: ResetFontSize               }
-  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
-  - { key: F11,       mods: None,          action: ToggleFullscreen            }
-  - { key: Paste,     mods: None,          action: Paste                       }
-  - { key: Copy,      mods: None,          action: Copy                        }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: L,         mods: Control,       chars: "\x0c"                       }
-  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
-  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
-  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
-  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
-
+  # (Windows, Linux, and BSD only)
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Insert, mods: Shift, action: PasteSelection }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: F11, mods: None, action: ToggleFullscreen }
+  - { key: Paste, mods: None, action: Paste }
+  - { key: Copy, mods: None, action: Copy }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: L, mods: Control, chars: "\f" }
+  - {
+      key: PageUp,
+      mods: None,
+      action: ScrollPageUp,
+      mode: ~Alt
+    }
+  - {
+      key: PageDown,
+      mods: None,
+      action: ScrollPageDown,
+      mode: ~Alt
+    }
+  - {
+      key: Home,
+      mods: Shift,
+      action: ScrollToTop,
+      mode: ~Alt
+    }
+  - {
+      key: End,
+      mods: Shift,
+      action: ScrollToBottom,
+      mode: ~Alt
+    }
+theme: Chalk.dark

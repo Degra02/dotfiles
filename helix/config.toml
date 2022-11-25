@@ -1,5 +1,5 @@
 #!TOML
-theme = "bogster"
+theme = "catppuccin_mocha"
 
 [editor]
 shell = ["zsh", "-c"]

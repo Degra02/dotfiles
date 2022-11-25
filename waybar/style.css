@@ -40,12 +40,12 @@ window#waybar.hidden {
     color: #7c818c;
     background: transparent;
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #workspaces button.persistent {
     color: #7c818c;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */

@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 30, // Waybar height (to be removed for auto height)
-    "margin": "20 20 0 20",
+    "height": 20, // Waybar height (to be removed for auto height)
+    "margin": "10 10 0 10",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "hyprland/window"],
@@ -14,6 +14,21 @@
     //*  Modules configuration  *
     //***************************
     
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        }
+    },
+                
     "disk": {
         "interval": 60,
         "format": "  {free}  ",
