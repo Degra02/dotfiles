@@ -17,16 +17,16 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 120
+    lines: 30
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   #position:
-  #  x: 0
-  #  y: 0
+  # x: 1500
+  # y: 500
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
@@ -43,7 +43,7 @@ window:
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
   # opacity: 1.0
-  opacity: 0.97
+  opacity: 1.0
 
   # Window decorations
   #
@@ -54,17 +54,17 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: full
+  decorations: full
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
-  #   - Windowed
+  # - Windowed
   #   - Maximized
   #   - Fullscreen
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  # startup_mode: Fullscreen
+  startup_mode: Windowed
   # Window title
   title: Alacritty
 
@@ -175,7 +175,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 14.5
+  size: 16
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

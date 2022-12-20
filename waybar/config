@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
-    "margin": "10 10 0 10",
+    "height": 15, // Waybar height (to be removed for auto height)
+    "margin": "3 5 3 5",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "hyprland/window"],
@@ -16,7 +16,7 @@
     
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 14,
+        "icon-size": 12,
         "icon-theme": "Numix-Circle",
         "tooltip-format": "{title}",
         "on-click": "activate",
