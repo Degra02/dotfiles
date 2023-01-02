@@ -50,8 +50,9 @@
     },
     
     "hyprland/window": {
-        "format": "-> {}",
-        "separate-outputs": true
+        "format": " -> {} ",
+        "separate-outputs": true,
+        "max-length": 40
     },
     
     "wlr/workspaces": {

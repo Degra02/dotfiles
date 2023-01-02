@@ -12,7 +12,7 @@ local api = vim.api
 local utils = require("utils")
 
 -- check if we have the latest stable version of nvim
-local expected_ver = "0.8.1"
+local expected_ver = "0.8.2"
 local nvim_ver = utils.get_nvim_version()
 
 if nvim_ver ~= expected_ver then
@@ -121,6 +121,20 @@ set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
+-- Neovide configs
+
+vim.cmd ([[
+let g:neovide_hide_mouse_when_typing = v:true
+let g:neovide_no_idle = v:true
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h11
+]])
+
+if vim.g.neovide == true then
+  vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+end
+
 -- Completion Plugin Setup
 local cmp = require'cmp'
 cmp.setup({
@@ -183,5 +197,7 @@ require('nvim-highlight-colors').setup {}
 -- Custom highlighting stuff
 
 vim.cmd('highlight TrailingWhiteSpace NONE')
+vim.cmd('highlight Cursor guibg=#FFFFFF')
+
 
 

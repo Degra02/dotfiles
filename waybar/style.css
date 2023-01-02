@@ -16,6 +16,13 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+#window {
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 10px;
+    background: #1d2021;  
+}
+
 #network {
     margin-left: 8px;
     margin-right: 8px;
