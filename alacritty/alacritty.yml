@@ -175,7 +175,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 16
+  size: 14
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -575,32 +575,32 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 colors:
-  name: Chalk (dark)
+  name: Atelierheath (dark)
   author: Chris Kempson
   primary:
-    background: "#151515"
-    foreground: "#d0d0d0"
+    background: "#1b181b"
+    foreground: "#ab9bab"
   cursor:
-    text: "#151515"
-    cursor: "#d0d0d0"
+    text: "#1b181b"
+    cursor: "#ab9bab"
   normal:
-    black: "#151515"
-    red: "#fb9fb1"
-    green: "#acc267"
-    yellow: "#ddb26f"
-    blue: "#6fc2ef"
-    magenta: "#e1a3ee"
-    cyan: "#12cfc0"
-    white: "#d0d0d0"
+    black: "#1b181b"
+    red: "#ca402b"
+    green: "#379a37"
+    yellow: "#bb8a35"
+    blue: "#516aec"
+    magenta: "#7b59c0"
+    cyan: "#159393"
+    white: "#ab9bab"
   bright:
-    black: "#505050"
-    red: "#fb9fb1"
-    green: "#acc267"
-    yellow: "#ddb26f"
-    blue: "#6fc2ef"
-    magenta: "#e1a3ee"
-    cyan: "#12cfc0"
-    white: "#f5f5f5"
+    black: "#776977"
+    red: "#ca402b"
+    green: "#379a37"
+    yellow: "#bb8a35"
+    blue: "#516aec"
+    magenta: "#7b59c0"
+    cyan: "#159393"
+    white: "#f7f3f7"
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
@@ -886,4 +886,4 @@ key_bindings:
       action: ScrollToBottom,
       mode: ~Alt
     }
-theme: Chalk.dark
+theme: Atelierheath.dark

@@ -1,13 +1,3 @@
--- This is my personal Nvim configuration supporting Mac, Linux and Windows, with various plugins configured.
--- This configuration evolves as I learn more about Nvim and become more proficient in using Nvim.
--- Since it is very long (more than 1000 lines!), you should read it carefully and take only the settings that suit you.
--- I would not recommend cloning this repo and replace your own config. Good configurations are personal,
--- built over time with a lot of polish.
---
--- Author: Jie-dong Hao
--- Email: jdhao@hotmail.com
--- Blog: https://jdhao.github.io/
-
 local api = vim.api
 local utils = require("utils")
 
@@ -48,6 +38,11 @@ local rt = require("rust-tools")
 
 rt.setup({
   server = {
+    setting = {
+      ["rust-analyzer"] = {
+          inlayHints = { locationLinks = false },
+       },
+      },
     on_attach = function(_, bufnr)
       -- Hover actions
       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
@@ -120,6 +115,10 @@ vim.cmd([[
 set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
+
+-- Material Theme
+vim.g.material_style = "darker"
+
 
 -- Neovide configs
 

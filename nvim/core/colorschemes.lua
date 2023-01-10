@@ -153,7 +153,7 @@ M.rand_colorscheme = function()
   end
 end
 
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme doom-one')
 
 -- Load a random colorscheme
 --M.rand_colorscheme()

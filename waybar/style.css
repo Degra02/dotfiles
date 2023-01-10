@@ -20,6 +20,7 @@ window#waybar.hidden {
     margin-left: 8px;
     margin-right: 8px;
     border-radius: 10px;
+    /*background-image: linear-gradient(to right, black, grey, black); */
     background: #1d2021;  
 }
 
@@ -83,17 +84,17 @@ window#waybar.hidden {
 
 #keyboard-state {
     margin-right: 8px;
-    padding-right: 16px;
-    border-radius: 0px 10px 10px 0px;
+    padding-right: 8px;
+    border-radius: 10px 10px 10px 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: #1d2021;
 }
 
 #custom-pacman {
-    padding-left: 16px;
+    padding-left: 8px;
     padding-right: 8px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 10px 10px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
