@@ -20,7 +20,8 @@ window#waybar.hidden {
     margin-left: 8px;
     margin-right: 8px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgba(24, 24, 37, 1), rgba(30, 30, 46, 1));
+    color: #11111b;
+    background-image: linear-gradient(to right, rgba(180, 190, 254, 1), rgba(205, 214, 244, 1), rgba(186, 194, 222, 1));
     /* background: #313244; */  
 }
 
@@ -66,8 +67,9 @@ window#waybar.hidden {
     text-shadow: inherit;
     border-radius: inherit;
     color: #383c4a;
-    background: #7c818c;
-}
+    /* background: #7c818c; */
+    background-image: linear-gradient(to right, rgba(148, 226, 213, 1), rgba(137, 180, 250, 1));
+  }
 
 #workspaces button.active {
     color: white;
@@ -90,6 +92,15 @@ window#waybar.hidden {
     transition: none;
     color: #ffffff;
     background-image: linear-gradient(to right, rgba(17, 17, 27, 1), rgba(24, 24, 37, 1));
+}
+
+#keyboard-state > label.locked {
+  margin-right: 8px;
+  padding-right: 8px;
+  border-radius: 10px 10px 10px 10px;
+  background-image: linear-gradient(to right, rgba(148, 226, 213, 1), rgba(137, 180, 250, 1));
+  color: #11111d
+  
 }
 
 #custom-pacman {
@@ -124,16 +135,16 @@ window#waybar.hidden {
     padding-right: 16px;
     border-radius: 10px 0px 0px 10px;
     transition: none;
-    color: #ffffff;
-    background-image: linear-gradient(to right, rgba(30, 30, 46, 1), rgba(49, 50, 68, 1));
+    color: #11111b;
+    background-image: linear-gradient(to right, rgba(243, 139, 168, 1), rgba(235, 160, 172, 1), rgba(250, 179, 135, 1));
 }
 
 #custom-weather {
     padding-right: 16px;
     border-radius: 0px 10px 10px 0px;
     transition: none;
-    color: #ffffff;
-    background: #313244;
+    color: #11111b;
+    background-image: linear-gradient(to right, rgba(250, 179, 135, 1), rgba(249, 226, 175, 1)); 
 }
 
 #pulseaudio {
@@ -222,7 +233,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #94e2d5;
+    background-image: linear-gradient(to right, rgba(148, 226, 213, 1), rgba(137, 180, 250, 1));
 }
 
 @keyframes blink {

@@ -1,4 +1,5 @@
 # dotfiles
 [Hyprland WM](https://github.com/hyprwm/Hyprland)
 
-![example](./screenshots/example.mp4)
+![example](./screenshots/screen.png)
+![nvim](./screenshots/nvim_screen.png)
