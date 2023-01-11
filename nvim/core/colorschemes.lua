@@ -153,7 +153,7 @@ M.rand_colorscheme = function()
   end
 end
 
-vim.cmd('colorscheme doom-one')
+vim.cmd('colorscheme catppuccin-mocha')
 
 -- Load a random colorscheme
 --M.rand_colorscheme()

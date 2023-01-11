@@ -192,6 +192,7 @@ cmp.setup({
 
 require('nvim-highlight-colors').setup {} 
 
+vim.cmd('let g:neovide_transparency = 0.9')
 
 -- Custom highlighting stuff
 

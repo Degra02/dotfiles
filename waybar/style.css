@@ -28,7 +28,7 @@ window#waybar.hidden {
     margin-left: 8px;
     margin-right: 8px;
     border-radius: 10px;
-    background: #313244;
+    background-image: linear-gradient(to right, rgba(127, 132, 156, 1), rgba(147, 153, 178, 1));
 }
 
 #disk {
@@ -143,12 +143,13 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #313244;
+    background-image: linear-gradient(to right, rgba(88, 91, 112, 1), rgba(108, 112, 134, 1));
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-image: linear-gradient(to right, rgba(148, 226, 213, 1), rgba(137, 180, 250, 1));
+    background-color: #94e2d5;
+    color: #11111b;
 }
 
 #custom-mem {
@@ -158,7 +159,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #313244;
+    background-image: linear-gradient(to right, rgba(69, 71, 90, 1), rgba(88, 91, 112, 1));
 }
 
 #temperature {
@@ -182,7 +183,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #313244;
+    background-image: linear-gradient(to right, rgba(108, 112, 134, 1), rgba(108, 112, 134, 1));
 }
 
 #battery {
@@ -192,7 +193,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #313244;
+    background-image: linear-gradient(to right, rgba(108, 112, 134, 1), rgba(127, 132, 156, 1));
 }
 
 #battery.charging {
@@ -221,7 +222,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #313244;
+    background: #94e2d5;
 }
 
 @keyframes blink {
