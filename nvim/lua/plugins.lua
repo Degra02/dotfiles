@@ -65,6 +65,10 @@ packer.startup {
     -- treesitter
     use { "nvim-treesitter/nvim-treesitter" }
 
+    -- Copilot 
+    use { "github/copilot.vim" }
+
+
     -- markdown-preview
     use { "davidgranstrom/nvim-markdown-preview" }
 
