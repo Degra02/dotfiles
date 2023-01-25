@@ -125,7 +125,7 @@ vim.g.material_style = "darker"
 vim.cmd ([[
 let g:neovide_hide_mouse_when_typing = v:true
 let g:neovide_no_idle = v:true
-set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h11
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h10
 ]])
 
 if vim.g.neovide == true then
@@ -192,7 +192,7 @@ cmp.setup({
 
 require('nvim-highlight-colors').setup {} 
 
-vim.cmd('let g:neovide_transparency = 0.9')
+vim.cmd('let g:neovide_transparency = 0.98')
 
 -- Custom highlighting stuff
 

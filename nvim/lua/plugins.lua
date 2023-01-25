@@ -59,7 +59,7 @@ packer.startup {
     -- Colorschemes
     use { "Shatur/neovim-ayu" }
     use { "nyoom-engineering/oxocarbon.nvim" }
-    -- use { "folke/tokyonight.nvim" } 
+    use {'folke/tokyonight.nvim'}
     use { "ellisonleao/gruvbox.nvim" }
 
     -- treesitter
