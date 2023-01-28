@@ -1,6 +1,6 @@
 require("degra")
 
-
+-- vim.cmd('g:Alpha')
 
 -- Neovide configs
 

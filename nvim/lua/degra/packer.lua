@@ -15,11 +15,22 @@ use {
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 
+-- icons
+use ('nvim-tree/nvim-web-devicons')
 use ('ryanoasis/vim-devicons')
 
 -- mkdir
 use {
   'jghauser/mkdir.nvim'
+}
+
+-- Startup page
+use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
 }
 
 use {
@@ -44,6 +55,14 @@ use ('nvim-treesitter/playground')
 use ('ThePrimeagen/harpoon')
 use ('mbbill/undotree')
 use ('tpope/vim-fugitive')
+
+-- LSP & debug
+use ('neovim/nvim-lspconfig')
+use ('simrat39/rust-tools.nvim')
+
+use ('puremourning/vimspector')
+
+use ('voldikss/vim-floaterm')
 
 use {
 	'VonHeikemen/lsp-zero.nvim',
