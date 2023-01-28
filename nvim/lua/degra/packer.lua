@@ -8,6 +8,16 @@ return require('packer').startup(function(use)
 use 'wbthomason/packer.nvim'
 
 -- colorschemes
+
+use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+        require("rose-pine").setup()
+        vim.cmd('colorscheme rose-pine')
+    end
+})
+
 use ('folke/tokyonight.nvim')
 
 use {
@@ -39,26 +49,48 @@ use {
 	requires = { {'nvim-lua/plenary.nvim'} }
 }
 
-use({
-	'rose-pine/neovim',
-	as = 'rose-pine',
-	config = function()
-		require("rose-pine").setup()
-		vim.cmd('colorscheme rose-pine')
-	end
-})
+-- Keybindings & such
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 500
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
-use ('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
+-- Smooth scrolling
+use ('karb94/neoscroll.nvim')
 
-use ('nvim-treesitter/playground')
+-- Autoclose brackets, quotes, ...
+use ('m4xshen/autoclose.nvim')
+
 
 use ('ThePrimeagen/harpoon')
 use ('mbbill/undotree')
 use ('tpope/vim-fugitive')
 
+
 -- LSP & debug
+use ('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
+use ('nvim-treesitter/playground')
+use ('nvim-treesitter/nvim-treesitter-context')
+
 use ('neovim/nvim-lspconfig')
 use ('simrat39/rust-tools.nvim')
+
+use {
+    'saecki/crates.nvim',
+    tag = 'v0.3.0',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('crates').setup()
+    end,
+}
 
 use ('puremourning/vimspector')
 
