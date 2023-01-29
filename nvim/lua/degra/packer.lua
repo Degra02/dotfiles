@@ -7,7 +7,13 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
 use 'wbthomason/packer.nvim'
 
--- colorschemes
+-- Colors & colorschemes
+
+use ({"ziontee113/color-picker.nvim",
+    config = function()
+        require("color-picker")
+    end,
+})
 
 use({
     'rose-pine/neovim',

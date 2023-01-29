@@ -7,11 +7,16 @@ wk.register({
     r = { "Open Recent File"},
     t = { "Start FloatTerm Session" }
 },
-{
-    t = { "Toggle FloatTerm" }
-},
-
-{
+    t = { "Toggle FloatTerm" },
+    p = {
+        v = { "Explorer" },
+        s = { "Grep in all files" }
+    },
+    c = {
+        name = "Color Picker",
+        c = {"Pick Color"},
+        i = {"Insert Color"}
+    },
     g = {
         name = "Git",
         s = { "Status" },
@@ -19,6 +24,5 @@ wk.register({
         l = { "<cmd>Git log --oneline --decorate --graph --all <CR>", "Log" },
         a = { "<cmd>Git add . <CR>", "Add current directory files to git" },
     }
-},
 
 }, { prefix = "<leader>" })
