@@ -23,6 +23,6 @@ wk.register({
         d = { "<cmd>Git diff <CR>", "Diff" },
         l = { "<cmd>Git log --oneline --decorate --graph --all <CR>", "Log" },
         a = { "<cmd>Git add . <CR>", "Add current directory files to git" },
-    }
-
+    },
+    s = {"<cmd>NvimTreeToggle <CR>", "Toggle FileExplorer"},
 }, { prefix = "<leader>" })
