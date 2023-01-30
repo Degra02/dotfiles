@@ -24,5 +24,17 @@ wk.register({
         l = { "<cmd>Git log --oneline --decorate --graph --all <CR>", "Log" },
         a = { "<cmd>Git add . <CR>", "Add current directory files to git" },
     },
-    s = {"<cmd>NvimTreeToggle <CR>", "Toggle FileExplorer"},
+    s = {
+        "<cmd>NvimTreeToggle <CR>", "Toggle FileExplorer"
+    },
+    d = {
+        name = "Debug",
+        b = {"<cmd> lua require'dap'.toggle_breakpoint() <CR>", "Toggle breakpoint"},
+        c = {"<cmd> lua require'dap'.continue()<CR>", "Continue execution"},
+        s = {"<cmd> lua require'dap'.repl.open() <CR>", "Inspect state"},
+    },
+    x = {
+        name = "Troubles",
+        x = {"<cmd>TroubleToggle <CR>", "Troube Toggle"},
+    },
 }, { prefix = "<leader>" })

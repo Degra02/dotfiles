@@ -93,6 +93,24 @@ return {
 
 
 -- LSP & debug
+
+{
+  "folke/trouble.nvim",
+  requires = "nvim-tree/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+        position = "right",
+        width = 60,
+    }
+  end
+},
+
+'mfussenegger/nvim-dap',
+{
+    "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}
+},
+'folke/neodev.nvim',
+
 {
     'nvim-treesitter/nvim-treesitter',
     -- build =  ':TSUpdate',
