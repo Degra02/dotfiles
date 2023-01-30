@@ -64,12 +64,19 @@ return {
   config = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 500
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    require("which-key").setup {}
   end
+},
+
+-- Highlight same-name variables
+'RRethy/vim-illuminate',
+
+-- Comment lines
+{
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
 },
 
 -- Smooth scrolling
@@ -91,8 +98,56 @@ return {
   dependencies = { {'nvim-lua/plenary.nvim'} }
 },
 
+-- Autocompletion in command line
+{
+  'gelguy/wilder.nvim',
+  config = function()
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+      wilder.set_option('pipeline', {
+          wilder.branch(
+          wilder.python_file_finder_pipeline({
+              -- to use ripgrep : {'rg', '--files'}
+              -- to use fd      : {'fd', '-tf'}
+              file_command = {'find', '.', '-type', 'f', '-printf', '%P\n'}, 
+              -- to use fd      : {'fd', '-td'}
+              dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
+              -- use {'cpsm_filter'} for performance, requires cpsm vim plugin
+              -- found at https://github.com/nixprime/cpsm
+              filters = {'fuzzy_filter', 'difflib_sorter'},
+          }),
+          wilder.cmdline_pipeline(),
+          wilder.python_search_pipeline()
+          ),
+      })
+      wilder.set_option('renderer', wilder.popupmenu_renderer(
+      wilder.popupmenu_border_theme({
+          highlights = {
+              border = 'Normal',
+          },
+          border = 'rounded',
+      })
+      ))
+  end,
+},
+
+'roxma/nvim-yarp',
 
 -- LSP & debug
+
+-- Completion framework:
+'hrsh7th/nvim-cmp',
+
+-- LSP completion source:
+'hrsh7th/cmp-nvim-lsp',
+
+-- Useful completion sources:
+'hrsh7th/cmp-nvim-lua',
+'hrsh7th/cmp-nvim-lsp-signature-help',
+'hrsh7th/cmp-vsnip',
+'hrsh7th/cmp-path',
+'hrsh7th/cmp-buffer',
+'hrsh7th/vim-vsnip',
 
 {
   "folke/trouble.nvim",
