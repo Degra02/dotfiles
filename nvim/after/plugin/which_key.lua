@@ -5,9 +5,7 @@ wk.register({
     name = "file", -- optional group name
     f = { "Find File" }, 
     r = { "Open Recent File"},
-    t = { "Start FloatTerm Session" }
 },
-    t = { "Toggle FloatTerm" },
     p = {
         v = { "Explorer" },
         s = { "Grep in all files" }
@@ -37,4 +35,7 @@ wk.register({
         name = "Troubles",
         x = {"<cmd>TroubleToggle <CR>", "Troube Toggle"},
     },
+    t = {
+        "<cmd>ToggleTerm size=70 direction=vertical <CR>", "Terminal"
+    }
 }, { prefix = "<leader>" })

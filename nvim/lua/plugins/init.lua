@@ -1,7 +1,4 @@
 return {
-  -- Packer can manage itself
--- 'wbthomason/packer.nvim',
-
 -- Colors & colorschemes
 
 {"ziontee113/color-picker.nvim",
@@ -11,12 +8,12 @@ return {
 },
 
 {
+    'decaycs/decay.nvim', as = 'decay'
+},
+
+{
     'rose-pine/neovim',
     as = 'rose-pine',
-    config = function()
-        require("rose-pine").setup()
-        vim.cmd('colorscheme rose-pine')
-    end
 },
 
 'folke/tokyonight.nvim',
@@ -104,34 +101,29 @@ return {
   config = function()
       local wilder = require('wilder')
       wilder.setup({modes = {':', '/', '?'}})
-      wilder.set_option('pipeline', {
-          wilder.branch(
-          wilder.python_file_finder_pipeline({
-              -- to use ripgrep : {'rg', '--files'}
-              -- to use fd      : {'fd', '-tf'}
-              file_command = {'find', '.', '-type', 'f', '-printf', '%P\n'}, 
-              -- to use fd      : {'fd', '-td'}
-              dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
-              -- use {'cpsm_filter'} for performance, requires cpsm vim plugin
-              -- found at https://github.com/nixprime/cpsm
-              filters = {'fuzzy_filter', 'difflib_sorter'},
-          }),
-          wilder.cmdline_pipeline(),
-          wilder.python_search_pipeline()
-          ),
-      })
-      wilder.set_option('renderer', wilder.popupmenu_renderer(
-      wilder.popupmenu_border_theme({
-          highlights = {
-              border = 'Normal',
-          },
-          border = 'rounded',
-      })
-      ))
+      wilder.set_option('renderer', wilder.popupmenu_renderer({
+          highlighter = wilder.basic_highlighter(),
+          left = {' ', wilder.popupmenu_devicons()},
+          right = {' ', wilder.popupmenu_scrollbar()},
+      }))
   end,
 },
-
+'roxma/vim-hug-neovim-rpc',
 'roxma/nvim-yarp',
+
+-- Top bar like VSCode
+{
+  "utilyre/barbecue.nvim",
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  opts = {
+    -- configurations go here
+  },
+},
 
 -- LSP & debug
 
@@ -142,12 +134,12 @@ return {
 'hrsh7th/cmp-nvim-lsp',
 
 -- Useful completion sources:
-'hrsh7th/cmp-nvim-lua',
-'hrsh7th/cmp-nvim-lsp-signature-help',
-'hrsh7th/cmp-vsnip',
-'hrsh7th/cmp-path',
-'hrsh7th/cmp-buffer',
-'hrsh7th/vim-vsnip',
+-- 'hrsh7th/cmp-nvim-lua',
+-- 'hrsh7th/cmp-nvim-lsp-signature-help',
+-- 'hrsh7th/cmp-vsnip',
+-- 'hrsh7th/cmp-path',
+-- 'hrsh7th/cmp-buffer',
+-- 'hrsh7th/vim-vsnip',
 
 {
   "folke/trouble.nvim",
@@ -171,7 +163,7 @@ return {
     -- build =  ':TSUpdate',
 },
 'nvim-treesitter/playground',
-'nvim-treesitter/nvim-treesitter-context',
+-- 'nvim-treesitter/nvim-treesitter-context',
 
 'neovim/nvim-lspconfig',
 'simrat39/rust-tools.nvim',
@@ -187,7 +179,14 @@ return {
 
 'puremourning/vimspector',
 
-'voldikss/vim-floaterm',
+-- 'voldikss/vim-floaterm',
+
+{
+"akinsho/toggleterm.nvim",
+    config = function()
+  require("toggleterm").setup()
+end,
+},
 
 {
 	'VonHeikemen/lsp-zero.nvim',
