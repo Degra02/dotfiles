@@ -6,7 +6,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["keyboard-state", "wlr/workspaces", "hyprland/window"],
-    "modules-center": ["clock", "custom/weather"],
+    "modules-center": ["clock"],
     "modules-right": ["disk", "custom/mem", "temperature", "pulseaudio", "backlight", "battery", "network","tray"],
 
 

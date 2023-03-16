@@ -133,10 +133,10 @@ window#waybar.hidden {
 #clock {
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 10px 10px;
     transition: none;
     color: #11111b;
-    background-image: linear-gradient(to right, rgba(243, 139, 168, 1), rgba(235, 160, 172, 1), rgba(250, 179, 135, 1));
+    background: #9ccfd8;
 }
 
 #custom-weather {

@@ -40,9 +40,3 @@ map kitty_mod+end       scroll_end
 map kitty_mod+h         show_scrollback
 
 map ctrl+backspace send_text all \x17
-
-
-# BEGIN_KITTY_THEME
-# Rosé Pine
-include current-theme.conf
-# END_KITTY_THEME

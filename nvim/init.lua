@@ -1,19 +1,6 @@
 require("degra")
 
--- local lspconfig = require('lspconfig')
---
--- if not lspconfig.rust_hdl then
---   require'lspconfig/configs'.rust_hdl = {
---     default_config = {
---       cmd = {"vhdl_ls"};
---       filetypes = { "vhdl" };
---       root_dir = function(fname)
---         return lspconfig.util.root_pattern('vhdl_ls.toml')(fname)
---       end;
---       settings = {};
---     };
---   }
--- end
+-- vim.cmd.colorscheme("rose-pine")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
