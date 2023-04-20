@@ -1,40 +1,23 @@
-require("degra")
-
--- vim.cmd.colorscheme("rose-pine")
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-vim.g.mapleader = " "
-
-require("lazy").setup('plugins')
-
-
-local lspconfig = require 'lspconfig'
-local configs = require 'lspconfig.configs'
-
--- Neovide configs
-
-vim.cmd ([[
-let g:neovide_hide_mouse_when_typing = v:true
-let g:neovide_no_idle = v:true
-set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h10
-]])
-
-if vim.g.neovide == true then
-  vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
-  vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
-  vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+for _, source in ipairs {
+  "astronvim.bootstrap",
+  "astronvim.options",
+  "astronvim.lazy",
+  "astronvim.autocmds",
+  "astronvim.mappings",
+} do
+  local status_ok, fault = pcall(require, source)
+  if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
 end
 
+if astronvim.default_colorscheme then
+  if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
+    require("astronvim.utils").notify("Error setting up colorscheme: " .. astronvim.default_colorscheme, "error")
+  end
+end
 
+require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
+
+vim.cmd('colorscheme rose-pine')
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

@@ -1,4 +1,4 @@
-@theme "/usr/share/rofi/themes/Monokai.rasi"
+//@theme "/usr/share/rofi/themes/Indego.rasi"
 
 configuration {
 	/*---------- General setting ----------*/
@@ -173,3 +173,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
+@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
