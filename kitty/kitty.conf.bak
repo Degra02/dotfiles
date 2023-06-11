@@ -1,19 +1,17 @@
 
 # vim:ft=kitty
 
-include ./kitty-themes/themes/ayu.conf
-
 scrollback_pager bash -c "exec nvim 63<&0 0</dev/null -u NONE -c 'map <silent> q :qa!<CR>' -c 'set shell=bash scrollback=100000 termguicolors laststatus=0 clipboard+=unnamedplus' -c 'autocmd TermEnter * stopinsert' -c 'autocmd TermClose * call cursor(max([0,INPUT_LINE_NUMBER-1])+CURSOR_LINE, CURSOR_COLUMN)' -c 'terminal sed </dev/fd/63 -e \"s/'$'\x1b'']8;;file:[^\]*[\]//g\" && sleep 0.01 && printf \"'$'\x1b'']2;\"'"
 
-background_opacity 0.8
+background_opacity 1.0
 window_padding_width 0
 allow_remote_control yes
 enable_audio_bell no
 url_style single
-tab_bar_style powerline
+hide_window_decorations yes
+window_border_width 0.5pt
 
-font_size 18.0
-background_opacity 0.95
+font_size 19.0
 disable_ligatures cursor
 
 font_family      JetBrainsMono Nerd Font Mono
@@ -40,3 +38,9 @@ map kitty_mod+end       scroll_end
 map kitty_mod+h         show_scrollback
 
 map ctrl+backspace send_text all \x17
+
+
+# BEGIN_KITTY_THEME
+# Rosé Pine
+include current-theme.conf
+# END_KITTY_THEME

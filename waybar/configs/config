@@ -8,6 +8,9 @@
   "margin-right": 0,
   "spacing": 0,
   "modules-left": [
+    "tray",
+    "custom/dot",
+    "keyboard-state",
     "custom/dot",
     "wlr/workspaces",
     "custom/arrow-dec",
@@ -15,15 +18,12 @@
     "custom/app-name"
   ],
   "modules-center": [
-    "custom/left",
-    "custom/cava",
-    "custom/priv-cam",
-    "custom/priv-speaker",
-    "custom/priv-mic",
-    "custom/right"
+
   ],
   "modules-right": [
     "memory",
+    "custom/dot",
+    "temperature",
     "custom/dot",
     "network",
     "custom/left-arrw",
@@ -45,8 +45,8 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format-icons": {
       "1": "󪤕",
-      "2": "󪤍",
-      "3": "󪥌",
+      "2": "󪥌",
+      "3": "󪥣",
       "4": "󪥅",
       "5": "󪤄",
       "6": "󪤋",
@@ -63,6 +63,15 @@
     "icon-size": 28,
     "spacing": 8
   },
+  "temperature": {
+      // "thermal-zone": 2,
+      "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "{temperatureC}°C {icon}",
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": ["", "", "", "", ""],
+      "tooltip": false,
+  },
   "clock": {
     "format": "<b>{:%I:%M %p}</b>",
     "format-alt": "<b>{:%a.%d,%b}</b>",
@@ -76,9 +85,8 @@
     "tooltip": false
   },
   "memory": {
-    "interval": 30,
+    "interval": 5,
     "format": "󪤲 {used}G",
-    "format-alt": " {used:0.1f}G",
     "max-length": 10
   },
   "backlight": {
@@ -99,15 +107,15 @@
     "on-click": ""
   },
   "network": {
-    "format-wifi": "󪥈 {essid}",
+    "format-wifi": "󪤀 {essid}",
     "format-ethernet": "󪥈 wired",
     "tooltip": false,
-    "format-disconnected": ""
+    "format-disconnected": ""
   },
   "pulseaudio": {
     "format": "{icon}",
-    "format-bluetooth": " ",
-    "format-bluetooth-muted": " ",
+    "format-bluetooth": " ",
+    "format-bluetooth-muted": "󰂲",
     "tooltip": false,
     "format-muted": "󪤑",
     "format-icons": {
@@ -124,6 +132,14 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "keyboard-state": {
+      "capslock": true,
+      "format": " {name} {icon}",
+      "format-icons": {
+          "locked": " ",
+          "unlocked": " "
+      },
   },
   "pulseaudio#text": {
     "tooltip": false,

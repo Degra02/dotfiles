@@ -13,7 +13,7 @@
 
 * {
   border: none;
-  font-family: JetBrainsMono Nerd Font;
+  font-family: JetBrains Mono;
   font-size: 15px;
 }
 
@@ -31,4 +31,8 @@
 
 #network.disconnected {
   color: @secondary;
+}
+
+#temperature {
+  color: @primary;
 }

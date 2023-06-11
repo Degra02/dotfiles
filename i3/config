@@ -25,7 +25,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a $myTerm
-set $myTerm alacritty
+set $myTerm kitty
 bindsym $mod+Return exec $myTerm
 
 # kill focused window

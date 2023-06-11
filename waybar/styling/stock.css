@@ -9,7 +9,11 @@ label:focus {
 }
 
 #temperature {
-  background-color: #f0932b;
+  background-color: #191724;
+}
+
+#keyboard-state {
+  background-color: #191724;
 }
 
 #temperature.critical {

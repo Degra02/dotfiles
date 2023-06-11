@@ -6,13 +6,34 @@ label#network {
   margin-top: 6px;
   margin-bottom: 6px;
   border-radius: 13px;
-  background-color: @background;
+  background-color: #191724;
 }
 
 #memory,
 #cpu,
 #disk,
-#temperature,
+
+label#keyboard-state {
+  padding: 0 0px;
+  color: @on-background;
+  background-color: @background;
+}
+
+box#keyboard-state {
+  font-size: 10px;
+  color: @on-background;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 13px;
+  background-color: #191724;
+}
+
+#temperature {
+  padding: 0 0px;
+  color: @on-background;
+  background-color: @background;
+}
+
 #backlight,
 #network,
 #mode,

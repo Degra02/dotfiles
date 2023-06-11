@@ -43,7 +43,7 @@
     "tooltip": false
   },
   "custom/arrow-dec": {
-    "format": " 󪥜 ",
+    "format": " => ",
     "tooltip": false
   },
   "custom/app-title-icon": {

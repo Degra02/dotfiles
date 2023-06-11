@@ -107,13 +107,13 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: Source Code Pro
+    family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: JetBrainsMono Nerd Font Mono
+    # family: JetBrainsMono Nerd Font Mono
     # family: SF Mono Nerd Font
     # family: JetBrains Mono
-    #family: UbuntuMono Nerd Font
+    # family: UbuntuMono Nerd Font
     #family: Monofur Nerd Font
     #family: TerminessTTF Nerd Font
     #family: Mononoki Nerd Font
@@ -162,12 +162,12 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrainsMono Nerd Font Mono
+    # family: JetBrainsMono Nerd Font Mono
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
+    family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
