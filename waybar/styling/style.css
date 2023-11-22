@@ -19,23 +19,10 @@
   margin-bottom: 1px;
 }
 
-#memory {
-  color: @primary;
-}
-
-#backlight {
-  color: @primary;
-}
-
-#network {
-  color: @on-background;
-}
-
-#network.disconnected {
-  color: @secondary;
-}
-
 #temperature {
-  color: @primary;
-  border-radius: 14px;
+  color: @on-background;
+  border-radius: 13px;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }

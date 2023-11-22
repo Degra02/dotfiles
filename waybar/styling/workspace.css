@@ -11,14 +11,14 @@ box#workspaces {
   margin-top: 7px;
   margin-bottom: 7px;
   border-radius: 13px;
-  background-color: @secondary-container;
+  background-color: #191724;
 }
 
 #workspaces button {
   color: alpha(@on-secondary-container, 0.45);
   background-color: transparent;
   /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px @secondary-container;
+  /* box-shadow: inset 0 -3px @secondary-container; */
   /* Avoid rounded borders under each workspace name */
   border: none;
   border-radius: 10px;

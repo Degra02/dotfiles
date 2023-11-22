@@ -3,12 +3,14 @@
 #custom-app-name,
 #custom-app-title-icon,
 #custom-arrow-dec {
+  margin-top: 5px;
+  margin-bottom: 5px;
   background-color: #191724;
   border-radius: 13px;
 }
 
 #custom-arrow-dec {
-  margin-left: 2px;
+  margin-left: 5px;
   font-size: 23px;
   color: #f8f8f2;
 }
