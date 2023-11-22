@@ -43,14 +43,13 @@ local custom_plugins = {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  { 
+  {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function ()
       require("custom.configs.rose-pine")
     end
   },
-
   {'zbirenbaum/copilot.lua',
     cmd = "Copilot",
   event = "InsertEnter",

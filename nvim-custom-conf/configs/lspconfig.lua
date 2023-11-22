@@ -4,6 +4,14 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 local servers = { "html", "cssls", "clangd", "rust_analyzer"}
 
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -19,16 +27,13 @@ clangd_capabilities.textDocument.semanticHighlighting = true
 clangd_capabilities.offsetEncoding = "utf-8"
 
 lspconfig.clangd.setup {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
   capabilities = capabilities,
   cmd = { "clangd", "--background-index" },
   filetypes = { "c", "cpp", "objc", "objcpp" },
-  init_options = {
-    clangdFileStatus = true,
-    usePlaceholders = true,
-    completeUnimported = true,
-    semanticHighlighting = true,
-  },
 }
 
 lspconfig.eslint.setup({

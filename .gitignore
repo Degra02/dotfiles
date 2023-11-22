@@ -21,6 +21,7 @@ alacritty/
 nvim/
 !nvim/lua/custom/
 !nvim/init.lua
+!nvim-custom-conf/
 
 # i3 stuff
 !picom
@@ -32,7 +33,7 @@ polybar/*
 
 # misc
 !kitty
+kitty/kitty-themes/
 !wofi
 nvim.bk/
-!nvim-custom-conf/
 
