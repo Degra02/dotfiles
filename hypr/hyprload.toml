@@ -1,0 +1,8 @@
+plugins = [
+    # Installs the plugin from https://github.com/Duckonaut/split-monitor-workspaces
+    "Duckonaut/split-monitor-workspaces",
+    # A more explicit definition of the git install
+    { git = "https://github.com/Duckonaut/split-monitor-workspaces", branch = "main", name = "split-monitor-workspaces" },
+    # Installs the same plugin from a local folder
+    { local = "/home/duckonaut/repos/split-monitor-workspaces" },
+]

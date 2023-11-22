@@ -60,7 +60,7 @@ bindsym XF86AudioMute exec --no-startup-id i3-volume mute
 
 # Start Applications
 # bindsym $mod+b exec firefox
-bindsym $mod+Shift+p exec $myTerm -o font.size=8 -e 'bpytop'
+bindsym $mod+Shift+p exec $myTerm -o font.size=8 -e 'btop'
 
 # Firefox
 bindsym $mod+b exec firefox

@@ -11,7 +11,7 @@ url_style single
 hide_window_decorations yes
 window_border_width 0.5pt
 
-font_size 19.0
+font_size 16.0
 disable_ligatures cursor
 
 font_family      JetBrainsMono Nerd Font Mono
@@ -41,6 +41,6 @@ map ctrl+backspace send_text all \x17
 
 
 # BEGIN_KITTY_THEME
-# Rosé Pine
+# Source Code X
 include current-theme.conf
 # END_KITTY_THEME

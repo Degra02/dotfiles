@@ -1,36 +1,11 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
 env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
 window:
-  # Window dimensions (changes require restart)
-  #
-  # Specified in number of columns/lines, not pixels.
-  # If both are `0`, this setting is ignored.
   dimensions:
     columns: 120
     lines: 30
-  # Window position (changes require restart)
-  #
-  # Specified in number of pixels.
-  # If the position is not set, the window manager will handle the placement.
-  #position:
-  # x: 1500
-  # y: 500
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
+
   padding:
     x: 3
     y: 0
@@ -39,10 +14,6 @@ window:
   dynamic_padding: true
 
   # Background opacity
-  #
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
-  # opacity: 1.0
   opacity: 1.0
 
   # Window decorations
@@ -50,10 +21,6 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  #
-  # Values for `decorations` (macOS only):
-  #     - transparent: Title bar, transparent background and title bar buttons
-  #     - buttonless: Title bar, transparent background, but no title bar buttons
   decorations: full
   # Startup Mode (changes require restart)
   #
@@ -61,9 +28,6 @@ window:
   # - Windowed
   #   - Maximized
   #   - Fullscreen
-  #
-  # Values for `startup_mode` (macOS only):
-  #   - SimpleFullscreen
   startup_mode: Windowed
   # Window title
   title: Alacritty
@@ -88,7 +52,6 @@ scrolling:
   #multiplier: 3
   # Scroll to the bottom when new text is written to the terminal.
   #auto_scroll: false
-
   # Spaces per Tab (changes require restart)
   #
   # This setting defines the width of a tab in cells.
@@ -107,10 +70,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Source Code Pro
+    # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: SF Mono Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
@@ -129,7 +92,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -144,7 +107,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -175,7 +138,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 10
+  size: 18
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -187,22 +150,7 @@ font:
   # increasing `y` moves the glyph upwards.
   #glyph_offset:
   #  x: 0
-  #  y: 0
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  #use_thin_strokes: true
+  #  y: 0 
   # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
@@ -211,7 +159,8 @@ draw_bold_text_with_bright_colors: true
 #######################################
 schemes:
   ### Doom One ###
-  DoomOne: &DoomOne
+  DoomOne:
+    &DoomOne
     primary:
       background: "#282c34"
       foreground: "#bbc2cf"
@@ -241,7 +190,8 @@ schemes:
       white: "#dfdfdf"
 
   ### Dracula ###
-  Dracula: &Dracula
+  Dracula:
+    &Dracula
     primary:
       background: "#282a36"
       foreground: "#f8f8f2"
@@ -573,38 +523,37 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 colors:
-  name: TokyoNight Night
-  author: Folke
   # Default colors
   primary:
-    background: "0x1a1b26"
-    foreground: "0xc0caf5"
+    background: '#181818'
+    foreground: '#d8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#d8d8d8'
+    cursor: '#d8d8d8'
 
   # Normal colors
   normal:
-    black: "0x15161E"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xa9b1d6"
+    black: '#181818'
+    red: '#ab4642'
+    green: '#a1b56c'
+    yellow: '#f7ca88'
+    blue: '#7cafc2'
+    magenta: '#ba8baf'
+    cyan: '#86c1b9'
+    white: '#d8d8d8'
 
   # Bright colors
   bright:
-    black: "0x414868"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xc0caf5"
-
-  indexed_colors:
-    - { index: 16, color: "0xff9e64" }
-    - { index: 17, color: "0xdb4b4b" }
+    black: '#585858'
+    red: '#ab4642'
+    green: '#a1b56c'
+    yellow: '#f7ca88'
+    blue: '#7cafc2'
+    magenta: '#ba8baf'
+    cyan: '#86c1b9'
+    white: '#f8f8f8'
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
@@ -854,6 +803,7 @@ program: /bin/zsh
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
   # (Windows, Linux, and BSD only)
+  - { key: Back, mods: Control, chars: "\x17" }
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: Insert, mods: Shift, action: PasteSelection }
@@ -866,8 +816,28 @@ key_bindings:
   - { key: Copy, mods: None, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, chars: "\f" }
-  - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
-  - { key: PageDown, mods: None, action: ScrollPageDown, mode: ~Alt }
-  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
-  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
-theme: Tokyonight_Night
+  - {
+      key: PageUp,
+      mods: None,
+      action: ScrollPageUp,
+      mode: ~Alt
+    }
+  - {
+      key: PageDown,
+      mods: None,
+      action: ScrollPageDown,
+      mode: ~Alt
+    }
+  - {
+      key: Home,
+      mods: Shift,
+      action: ScrollToTop,
+      mode: ~Alt
+    }
+  - {
+      key: End,
+      mods: Shift,
+      action: ScrollToBottom,
+      mode: ~Alt
+    }
+theme: Base16-Default-Dark
