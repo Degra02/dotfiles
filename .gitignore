@@ -20,6 +20,7 @@ alacritty/
 # nvim 
 nvim/
 !nvim/lua/custom/
+!nvim/init.lua
 
 # i3 stuff
 !picom
