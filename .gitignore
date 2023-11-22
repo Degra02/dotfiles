@@ -1,0 +1,39 @@
+# ignore all files and then select the ones that should be tracked
+/*
+!.gitignore
+!screenshots
+!README.md
+
+#hyprland
+!hypr
+!wlogout
+!waybar
+
+!/rofi
+!rofi/config.rasi
+rofi/*
+
+# alacritty
+!alacritty/alacritty.yml
+alacritty/
+
+# nvim 
+nvim/
+!nvim/lua/nvim/*
+nvim/lua/core
+nvim/lua/plugins
+
+# i3 stuff
+!picom
+!i3
+polybar/*
+!polybar/forest/*
+!polybar.personal
+
+
+# misc
+!kitty
+!wofi
+nvim.bk/
+!nvim-custom-conf/
+
