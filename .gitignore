@@ -18,10 +18,8 @@ rofi/*
 alacritty/
 
 # nvim 
-nvim/
 !nvim/lua/custom/
-!nvim/init.lua
-!nvim-custom-conf/
+!nvim/lua/core/mappings/
 
 # i3 stuff
 !picom

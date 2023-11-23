@@ -13,7 +13,6 @@
     "keyboard-state",
     "custom/dot",
     "hyprland/workspaces",
-    "custom/arrow-dec",
     "custom/app-title-icon",
     "custom/app-name"
   ],
@@ -26,14 +25,14 @@
     "temperature",
     "custom/dot",
     "network",
-    "custom/left-arrw",
+    "custom/dot",
     "backlight",
-    "custom/left-arrw",
+    "custom/dot",
     "battery",
     "battery#text",
     "pulseaudio",
     "pulseaudio#text",
-    "custom/dot-alt",
+    "custom/dot",
     "clock"
   ],
   "hyprland/window": {
