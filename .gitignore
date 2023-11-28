@@ -21,6 +21,9 @@ alacritty/
 !nvim/lua/custom/
 !nvim/lua/core/mappings/
 
+# tmux
+!tmux/tmux.conf
+
 # i3 stuff
 !picom
 !i3
