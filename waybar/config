@@ -1,0 +1,87 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/spotify", "backlight", "pulseaudio", "bluetooth", "network", "battery", "clock", "tray"],
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+    },
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "active": "",
+        "default": ""
+      }
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/degra/.config/waybar/scripts/mediaplayer.py --player spotifyd",
+        "format": " {}",
+        "return-type": "json",
+        "on-click": "playerctl -p spotifyd play-pause",
+    },
+    "custom/waybar-media": {
+        "return-type": "json",
+        "exec": "waybar-media.py status",
+        "on-click": "waybar-media.py playpause",
+        "on-scroll-up": "waybar-media.py previous",
+        "on-scroll-down": "waybar-media.py next",
+        "escape": true
+    },
+    "clock": {
+      "format": "<span color='#ebdbb2'> </span>{:%H:%M}",
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#ebdbb2'>{icon}</span> {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+      "format": "<span color='#ebdbb2'>{icon}</span> {volume}%",
+      "format-muted": "󰝟",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+    },
+    "bluetooth": {
+      "format": "<span color='#ebdbb2'></span> {status}",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "<span color='#ebdbb2'></span> {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
+    },
+    "network": {
+      "interface": "wlo1",
+      "format": "{ifname}",
+      "format-wifi": "<span color='#ebdbb2'> </span>{essid}",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#ebdbb2'>󰖪 </span>No Network",
+      "tooltip": false,
+    },
+    "battery": {
+      "format": "<span color='#ebdbb2'>{icon}</span> {capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-charging": "<span color='#8ec07c'>󰂄</span> {capacity}%",
+      "tooltip": false,
+    },
+    "hyprland/window": {
+      "format": "{}",
+      "rewrite": {
+          "(.*) — Mozilla Firefox": " $1",
+          "(.*) - Alacritty": " [$1]",
+          "(.*) - zsh": " [$1]", 
+          "(.*) - nvim": " [$1]",
+          "(.*) - Discord": " $1",
+          "(.*) - Telegram": " $1",
+          "([tmux].*)": " Terminal",   
+          "(.*) - Spotify": " $1",
+      },
+      "separate-outputs": true
+    }
+}
