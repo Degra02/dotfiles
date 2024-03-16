@@ -44,9 +44,29 @@ window#waybar {
   margin-right: 15px;
 }
 
-#window, #tray, #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
-  border-radius: 10px;
+#window, #mpris, #tray, #memory, #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
+  border-radius: 8px;
   background-color: #282828;
+  color: #ebdbb2;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+}
+
+#mpris.playing {
+  border-radius: 8px;
+  background-color: #98971a;
+  color: #32302f;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+}
+
+#mpris.paused {
+  border-radius: 8px;
+  background-color: #1d2021;
   color: #ebdbb2;
   margin-top: 5px;
   padding-left: 10px;

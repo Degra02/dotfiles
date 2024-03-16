@@ -1,8 +1,8 @@
 {
   "layer": "top",
     "modules-left": ["custom/arch", "hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/spotify", "backlight", "pulseaudio", "bluetooth", "network", "battery", "clock", "tray"],
+    "modules-center": ["hyprland/window", "mpris"],
+    "modules-right": ["memory", "backlight", "pulseaudio", "bluetooth", "network", "battery", "clock", "tray"],
     "custom/arch": {
       "format": "  ",
       "tooltip": false,
@@ -31,6 +31,24 @@
         "on-scroll-down": "waybar-media.py next",
         "escape": true
     },
+    "mpris": {
+      "format": "{player_icon} {dynamic}",
+      "format-paused": "{status_icon} {dynamic}",
+      "dynamic-len": 45,
+      "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
+      "player-icons": {
+        "default": "▶",
+        "mpv": "🎵"
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
+    },
+    "memory": {
+      "interval": 30,
+      "format": " {}%",
+      "max-length": 10
+    },
     "clock": {
       "format": "<span color='#ebdbb2'> </span>{:%H:%M}",
     },
@@ -51,15 +69,16 @@
     },
     "bluetooth": {
       "format": "<span color='#ebdbb2'></span> {status}",
-      "format-disabled": "", // an empty format will hide the module
-      "format-connected": "<span color='#ebdbb2'></span> {num_connections}",
+      "format-disabled": "󰂲", // an empty format will hide the module
+      "format-connected": "<span color='#458588'></span> {num_connections}",
       "tooltip-format": "{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+      "on-click": "blueman-manager",
     },
     "network": {
       "interface": "wlo1",
-      "format": "{ifname}",
-      "format-wifi": "<span color='#ebdbb2'> </span>{essid}",
+      "format": " {ifname}",
+      "format-wifi": "   {essid}",
       "format-ethernet": "{ipaddr}/{cidr} ",
       "format-disconnected": "<span color='#ebdbb2'>󰖪 </span>No Network",
       "tooltip": false,
