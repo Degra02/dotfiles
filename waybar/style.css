@@ -36,7 +36,7 @@ window#waybar {
 
 #custom-spotify {
   border-radius: 10px;
-  background-color: #282828;
+  background-color: #1DB954;
   color: #ebdbb2;
   margin-top: 5px;
   padding-left: 10px;
@@ -56,7 +56,7 @@ window#waybar {
 
 #mpris.playing {
   border-radius: 8px;
-  background-color: #98971a;
+  background-color: #1DB954;
   color: #32302f;
   margin-top: 5px;
   padding-left: 10px;

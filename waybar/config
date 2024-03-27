@@ -66,6 +66,7 @@
         "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
       },
       "scroll-step": 1,
+      "on-click": "pavucontrol"
     },
     "bluetooth": {
       "format": "<span color='#ebdbb2'></span> {status}",
