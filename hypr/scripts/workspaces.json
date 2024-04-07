@@ -1,0 +1,115 @@
+{
+  "Normal_60hz": {
+    "monitors": [
+      {
+        "name": "eDP-1",
+        "state": {
+          "Enabled": {
+            "dimensions": [
+              2560,
+              1600
+            ],
+            "position": [
+              0,
+              0
+            ],
+            "rerfresh_rate": 60,
+            "scaling": 1.25
+          }
+        }
+      },
+      {
+        "name": "HDMI-A-1",
+        "state": "Disabled"
+      }
+    ]
+  },
+  "Normal_165hz": {
+    "monitors": [
+      {
+        "name": "eDP-1",
+        "state": {
+          "Enabled": {
+            "dimensions": [
+              2560,
+              1600
+            ],
+            "position": [
+              0,
+              0
+            ],
+            "rerfresh_rate": 165,
+            "scaling": 1.25
+          }
+        }
+      },
+      {
+        "name": "HDMI-A-1",
+        "state": "Disabled"
+      }
+    ]
+  },
+  "Home": {
+    "monitors": [
+      {
+        "name": "HDMI-A-1",
+        "state": {
+          "Enabled": {
+            "dimensions": [
+              1920,
+              1080
+            ],
+            "position": [
+              0,
+              0
+            ],
+            "rerfresh_rate": 75,
+            "scaling": 1
+          }
+        }
+      },
+      {
+        "name": "eDP-1",
+        "state": {
+          "Enabled": {
+            "dimensions": [
+              2560,
+              1600
+            ],
+            "position": [
+              1920,
+              0
+            ],
+            "rerfresh_rate": 60,
+            "scaling": 1.25
+          }
+        }
+      }
+    ]
+  },
+  "HomeOneMonitor": {
+    "monitors": [
+      {
+        "name": "HDMI-A-1",
+        "state": {
+          "Enabled": {
+            "dimensions": [
+              1920,
+              1080
+            ],
+            "position": [
+              0,
+              0
+            ],
+            "rerfresh_rate": 75,
+            "scaling": 1
+          }
+        }
+      },
+      {
+        "name": "eDP-1",
+        "state": "Disabled"
+      }
+    ]
+  }
+}
