@@ -1,0 +1,57 @@
+[[Normal60Hz.monitors]]
+name = "eDP-1"
+
+[Normal60Hz.monitors.state.Enabled]
+dimensions = [2560, 1600]
+position = [0, 0]
+rerfresh_rate = 60
+scaling = 1.25
+
+[[Normal60Hz.monitors]]
+name = "HDMI-A-1"
+state = "Disabled"
+
+[[Normal165Hz.monitors]]
+name = "eDP-1"
+
+[Normal165Hz.monitors.state.Enabled]
+dimensions = [2560, 1600]
+position = [0, 0]
+rerfresh_rate = 165
+scaling = 1.25
+
+[[Normal165Hz.monitors]]
+name = "HDMI-A-1"
+state = "Disabled"
+
+
+[[Home.monitors]]
+name = "eDP-1"
+
+[Home.monitors.state.Enabled]
+dimensions = [2560, 1600]
+position = [1920, 0]
+rerfresh_rate = 60
+scaling = 1.25
+
+[[Home.monitors]]
+name = "HDMI-A-1"
+
+[Home.monitors.state.Enabled]
+dimensions = [1920, 1080]
+position = [0, 0]
+rerfresh_rate = 75
+scaling = 1.0
+
+[[HomeOneMonitor.monitors]]
+name = "eDP-1"
+
+[HomeOneMonitor.monitors.state.Enabled]
+dimensions = [2560, 1600]
+position = [1920, 0]
+rerfresh_rate = 60
+scaling = 1.25
+
+[[HomeOneMonitor.monitors]]
+name = "HDMI-A-1"
+state = "Disabled"
