@@ -31,7 +31,7 @@ name = "eDP-1"
 [Home.monitors.state.Enabled]
 dimensions = [2560, 1600]
 position = [1920, 0]
-rerfresh_rate = 60
+rerfresh_rate = 165
 scaling = 1.25
 
 [[Home.monitors]]
@@ -44,14 +44,14 @@ rerfresh_rate = 75
 scaling = 1.0
 
 [[HomeOneMonitor.monitors]]
-name = "eDP-1"
+name = "HDMI-A-1"
 
 [HomeOneMonitor.monitors.state.Enabled]
-dimensions = [2560, 1600]
-position = [1920, 0]
-rerfresh_rate = 60
-scaling = 1.25
+dimensions = [1920, 1080]
+position = [0, 0]
+rerfresh_rate = 75
+scaling = 1
 
 [[HomeOneMonitor.monitors]]
-name = "HDMI-A-1"
+name = "eDP-1"
 state = "Disabled"

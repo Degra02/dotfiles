@@ -1,7 +1,3 @@
--- Read the docs: https://www.lunarvim.org/docs/configuration
--- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
--- Forum: https://www.reddit.com/r/lunarvim/
--- Discord: https://discord.com/invite/Xb9B4Ny
 
 lvim.plugins = {
   -- Rust
@@ -11,6 +7,11 @@ lvim.plugins = {
       require('rust-tools').setup({})
     end,
   },
+
+  -- python
+  "AckslD/swenv.nvim",
+  "stevearc/dressing.nvim",
+
   -- Copilot
   -- {
   --   "zbirenbaum/copilot.lua",
@@ -20,19 +21,23 @@ lvim.plugins = {
   --     require("copilot").setup({})
   --   end,
   -- },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false }
-      })
-    end
-  },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   config = function()
+  --     require("copilot_cmp").setup({
+  --       suggestion = { enabled = false },
+  --       panel = { enabled = false }
+  --     })
+  --   end
+  -- },
 
   -- Colorschemes
   { "rose-pine/neovim",         name = "rose-pine" },
   { "ellisonleao/gruvbox.nvim", priority = 1000,   config = true, opts = ... },
+  { "rebelot/kanagawa.nvim" },
+
+  -- colors 
+  'NvChad/nvim-colorizer.lua',
 
   -- Minimap
   {
@@ -107,6 +112,8 @@ lvim.plugins = {
 
 }
 
+require('colorizer').setup()
+
 -- vim related options
 vim.opt.guifont = "JetBrains Mono Nerd Font:h12"
 vim.opt.relativenumber = true
@@ -140,8 +147,8 @@ lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 
 lvim.builtin.which_key.mappings["c"] = {
   name = "Various",
-  c = {":BufferKill <cr>", "Close buffer"},
---   d = {":Copilot disable <cr>", "Disable copilot"}
+  c = { ":BufferKill <cr>", "Close buffer" },
+  --   d = {":Copilot disable <cr>", "Disable copilot"}
 }
 
 -- clangd fix
@@ -154,6 +161,29 @@ require("lspconfig").clangd.setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
+}
+
+
+-- Language specific settings
+lvim.builtin.treesitter.ensure_installed = {
+  "python",
+}
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup { { name = "black" }, }
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup { { command = "flake8", args = { "--ignore=E203" }, filetypes = { "python" } } }
+
+require("swenv").setup({
+  post_set_env = function ()
+    vim.cmd("LspRestart")
+  end,
+})
+
+lvim.builtin.which_key.mappings["C"] = {
+  name = "Python",
+  c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Venv" },
 }
 
 

@@ -1,3 +1,5 @@
+@import url("colors.css");
+
 * {
   border: none;
   font-family: 'JetBrains Mono', 'Symbols Nerd Font Mono';
@@ -13,8 +15,8 @@ window#waybar {
 
 #custom-arch, #workspaces {
   border-radius: 12px;
-  background-color: #282828;
-  color: #ebdbb2;
+  background-color: @bg-color;
+  color: @fg-color;
   margin-top: 5px;
   margin-right: 15px;
   padding-top: 1px;
@@ -25,19 +27,19 @@ window#waybar {
 #custom-arch {
   font-size: 20px;
   margin-left: 15px;
-  color: #ebdbb2;
+  color: @fg-color;
 }
 
 
 #workspaces button {
   background: #1d2021;
-  color: #ebdbb2;
+  color: @fg-color;
 }
 
 #custom-spotify {
   border-radius: 10px;
   background-color: #1DB954;
-  color: #ebdbb2;
+  color: @fg-color;
   margin-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -46,8 +48,8 @@ window#waybar {
 
 #window, #mpris, #tray, #memory, #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
   border-radius: 8px;
-  background-color: #282828;
-  color: #ebdbb2;
+  background-color: @bg-color;
+  color: @fg-color;
   margin-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -66,8 +68,8 @@ window#waybar {
 
 #mpris.paused {
   border-radius: 8px;
-  background-color: #1d2021;
-  color: #ebdbb2;
+  background-color: @bg-color;
+  color: @fg-color;
   margin-top: 5px;
   padding-left: 10px;
   padding-right: 10px;

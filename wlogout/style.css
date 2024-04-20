@@ -5,18 +5,18 @@
   transition-duration: 0.7s;
 }
 window {
-  background-color: #282828;
+  background-color: rgba(10, 10, 10, 0.83);
   border-radius: 10px;
 }
 button {
   color: #ebdbb2;
-  background-color: #d65d0e;
+  background-color: transparent;
   border-style: solid;
-  border-width: 2px;
-  border-radius: 50px;
+  border-width: 5px;
+  border-radius: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 15%;
+  background-size: 20%;
   margin: 15px;
 }
 
