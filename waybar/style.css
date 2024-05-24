@@ -59,6 +59,7 @@ window#waybar {
   margin-right: 15px;
 }
 
+
 #mpris.playing {
   border-radius: 8px;
   color: #32302f;
@@ -75,7 +76,8 @@ window#waybar {
 
 @keyframes playing {
     0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+    33%{background-position:100% 50%}
+    80%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
 
