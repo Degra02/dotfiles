@@ -59,6 +59,10 @@ window#waybar {
   margin-right: 15px;
 }
 
+#tray {
+  margin-left: 10px;
+}
+
 
 #mpris.playing {
   border-radius: 8px;
@@ -117,8 +121,8 @@ window#waybar {
 }
 
 #pulseaudio {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 5;
+  border-bottom-left-radius: 5;
   padding-left: 5px;
 }
 
@@ -126,9 +130,9 @@ window#waybar {
   /* border-top-left-radius: 0; */
   /* border-bottom-left-radius: 0; */
   margin-left: 5px;
-  color: #000000;
+  color: #FFFFFF;
   padding-left: 5px;
-  animation: network_animation 4s linear infinite;
+  /* animation: network_animation 4s linear infinite; */
 }
 
 @keyframes network_animation {

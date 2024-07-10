@@ -47,7 +47,8 @@
     "memory": {
       "interval": 30,
       "format": " {}%",
-      "max-length": 10
+      "max-length": 10,
+      "on-click": "conky",
     },
     "clock": {
       "format": " {:%H:%M}",

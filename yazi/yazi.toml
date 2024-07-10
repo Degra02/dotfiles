@@ -1,0 +1,22 @@
+[preview]
+ueberzug_scale = 2.0
+ueberzug_offset = [-40, 8, 0.0, 0.0] 
+
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+  { mime = "text/csv", run = "miller"},
+  { mime = "audio/*",   run = "exifaudio"},
+
+  # Archive previewer
+	{ mime = "application/*zip",            run = "ouch" },
+	{ mime = "application/x-tar",           run = "ouch" },
+	{ mime = "application/x-bzip2",         run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar",           run = "ouch" },
+	{ mime = "application/x-xz",            run = "ouch" },
+]
+
+append_previewers = [
+  { name = "*", run = "hexyl" },
+]
