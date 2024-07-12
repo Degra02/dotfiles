@@ -1,6 +1,6 @@
 [manager]
 ratio = [1, 4, 6]
-show_hidden = true
+show_hidden = false
 linemode = "permissions"
 
 [preview]
