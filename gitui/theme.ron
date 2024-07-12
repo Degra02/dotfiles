@@ -1,0 +1,7 @@
+(
+    selection_bg: Some("#78a9ff"),
+    selection_fg: Some("#191919"),
+    diff_file_modified: Some("#ff7eb6"),
+    cmdbar_bg: Some("#08bdba"),
+    cmdbar_fg: Some("#191919"),
+)
