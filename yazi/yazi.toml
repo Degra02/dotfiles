@@ -1,3 +1,8 @@
+[manager]
+ratio = [1, 4, 6]
+show_hidden = true
+linemode = "permissions"
+
 [preview]
 ueberzug_scale = 2.0
 ueberzug_offset = [-40, 8, 0.0, 0.0] 
