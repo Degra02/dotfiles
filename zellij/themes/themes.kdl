@@ -1,0 +1,28 @@
+themes {
+    oxocarbon {
+        fg "#888888"
+        bg 38 38 38
+        red "#ff5555"
+        green 170 221 66 
+        yellow 9 189 186
+        blue 120 169 255
+        magenta 238 83 150
+        orange 255 111 0
+        cyan 51 187 187
+        black 22 22 22
+        white 255 255 255
+    }
+    dracula {
+        fg 248 248 242
+        bg 40 42 54
+        red 255 85 85
+        green 80 250 123
+        yellow 241 250 140
+        blue 98 114 164
+        magenta 255 121 198
+        orange 255 184 108
+        cyan 139 233 253
+        black 0 0 0
+        white 255 255 255
+    }
+}

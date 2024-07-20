@@ -3,6 +3,15 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -159,46 +168,46 @@ keybinds {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
 
-        bind "Ctrl h" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus_or_tab";
-                payload "left";
+        // bind "Ctrl h" {
+        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+        //         name "move_focus_or_tab";
+        //         payload "left";
+        //
+        //         // Plugin Configuration
+        //         move_mod "ctrl"; // Optional, should be added on every command if you want to use it
+        //         resize_mod "alt"; // Optional, should be added on every command if you want to use it
+        //     };
+        // }
 
-                // Plugin Configuration
-                move_mod "ctrl"; // Optional, should be added on every command if you want to use it
-                resize_mod "alt"; // Optional, should be added on every command if you want to use it
-            };
-        }
+        // bind "Ctrl j" {
+        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+        //         name "move_focus";
+        //         payload "down";
+        //
+        //         move_mod "ctrl";
+        //         resize_mod "alt";
+        //     };
+        // }
+        //
+        // bind "Ctrl k" {
+        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+        //         name "move_focus";
+        //         payload "up";
+        //
+        //         move_mod "ctrl";
+        //         resize_mod "alt";
+        //     };
+        // }
 
-        bind "Ctrl j" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus";
-                payload "down";
-
-                move_mod "ctrl";
-                resize_mod "alt";
-            };
-        }
-
-        bind "Ctrl k" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus";
-                payload "up";
-
-                move_mod "ctrl";
-                resize_mod "alt";
-            };
-        }
-
-        bind "Ctrl l" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus_or_tab";
-                payload "right";
-
-                move_mod "ctrl";
-                resize_mod "alt";
-            };
-        }
+        // bind "Ctrl l" {
+        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+        //         name "move_focus_or_tab";
+        //         payload "right";
+        //
+        //         move_mod "ctrl";
+        //         resize_mod "alt";
+        //     };
+        // }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -219,10 +228,10 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        bind "Ctrl b" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
+        bind "Alt b" { SwitchToMode "Tmux"; }
     }
 }
 
@@ -237,6 +246,11 @@ plugins {
     }
     filepicker location="zellij:strider" {
         cwd "/"
+    }
+    autolock location="https://github.com/fresh2dev/zellij-autolock/releases/latest/download/zellij-autolock.wasm" {
+          triggers "nvim|vim"  // Lock when any open these programs open. They are expected to unlock themselves when closed (e.g., using zellij.vim plugin).
+          watch_triggers "fzf|zoxide|atuin"  // Lock when any of these open and monitor until closed.
+          watch_interval "1.0"  // When monitoring, check every X seconds.
     }
 }
 
@@ -269,7 +283,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -289,7 +303,7 @@ plugins {
 // Options:
 //   - true
 //   - false (default)
-// serialize_pane_viewport true
+serialize_pane_viewport true
 
 // Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
@@ -297,35 +311,18 @@ plugins {
 //
 // scrollback_lines_to_serialize 10000
 
-// Define color themes for Zellij
-// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
-// Once these themes are defined, one of them should to be selected in the "theme" section of this file
-//
-// themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
-// }
-
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-// theme "default"
+theme "oxocarbon"
+
+theme_dir "/home/degra/.config/zellij/themes"
+
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "oxocarbon"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -387,11 +384,8 @@ plugins {
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "/home/degra/.config/zellij/layouts"
 
-// The folder in which Zellij will look for themes
-//
-// theme_dir "/path/to/my/theme_dir"
 
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals
