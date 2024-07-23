@@ -12,6 +12,8 @@ keybinds {
         bind "Alt 7" { GoToTab 7; }
         bind "Alt 8" { GoToTab 8; }
         bind "Alt 9" { GoToTab 9; }
+
+        bind "Alt m" { SwitchToMode "Move"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -168,46 +170,46 @@ keybinds {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
 
-        // bind "Ctrl h" {
-        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-        //         name "move_focus_or_tab";
-        //         payload "left";
-        //
-        //         // Plugin Configuration
-        //         move_mod "ctrl"; // Optional, should be added on every command if you want to use it
-        //         resize_mod "alt"; // Optional, should be added on every command if you want to use it
-        //     };
-        // }
+        bind "Ctrl h" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "left";
+        
+                // Plugin Configuration
+                move_mod "ctrl"; // Optional, should be added on every command if you want to use it
+                resize_mod "alt"; // Optional, should be added on every command if you want to use it
+            };
+        }
 
-        // bind "Ctrl j" {
-        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-        //         name "move_focus";
-        //         payload "down";
-        //
-        //         move_mod "ctrl";
-        //         resize_mod "alt";
-        //     };
-        // }
-        //
-        // bind "Ctrl k" {
-        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-        //         name "move_focus";
-        //         payload "up";
-        //
-        //         move_mod "ctrl";
-        //         resize_mod "alt";
-        //     };
-        // }
+        bind "Ctrl j" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+        
+                move_mod "ctrl";
+                resize_mod "alt";
+            };
+        }
+        
+        bind "Ctrl k" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+        
+                move_mod "ctrl";
+                resize_mod "alt";
+            };
+        }
 
-        // bind "Ctrl l" {
-        //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-        //         name "move_focus_or_tab";
-        //         payload "right";
-        //
-        //         move_mod "ctrl";
-        //         resize_mod "alt";
-        //     };
-        // }
+        bind "Ctrl l" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "right";
+        
+                move_mod "ctrl";
+                resize_mod "alt";
+            };
+        }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -252,6 +254,66 @@ plugins {
           watch_triggers "fzf|zoxide|atuin"  // Lock when any of these open and monitor until closed.
           watch_interval "1.0"  // When monitoring, check every X seconds.
     }
+    zjstatus location="file:/home/degra/.config/zellij/binaries/zjstatus.wasm" {
+          format_left   "#[bg=#78a9ff,fg=#161616,bold] {session} {mode}#[bg=237]"
+          format_center "{tabs}{notifications}"
+          format_right  "#[bg=#161616,fg=#595959]#[bg=#595959,fg=#161616] {command_user}@{command_host} #[bg=#595959,fg=#78a9ff]#[bg=#78a9ff,fg=#161616,bold] {datetime} "
+          format_space  "#[bg=#161616,fg=#161616]"
+          format_hide_on_overlength "true"
+          format_precedence "lrc"
+
+          border_enabled  "true"
+          border_char     "─"
+          border_format   "#[fg=237]{char}"
+          border_position "top"
+
+          hide_frame_for_single_pane "true"
+
+          mode_normal        "#[bg=#595959,fg=#78a9ff]#[bg=#595959,fg=#161616,bold] NORMAL#[bg=#161616,fg=#595959]"
+          mode_tmux          "#[bg=#08bdba,fg=#78a9ff]#[bg=#08bdba,fg=#161616,bold] TMUX#[bg=#161616,fg=#08bdba]"
+          mode_locked        "#[bg=#d75f5f,fg=#78a9ff]#[bg=#d75f5f,fg=#161616,bold] LOCKED#[bg=#161616,fg=#d75f5f]"
+          mode_pane          "#[bg=#ff7eb6,fg=#78a9ff]#[bg=#ff7eb6,fg=#161616,bold] PANE#[bg=#161616,fg=#ff7eb6]"
+          mode_tab           "#[bg=#ee5396,fg=#78a9ff]#[bg=#ee5396,fg=#161616,bold] TAB#[bg=#161616,fg=#ee5396]"
+          mode_scroll        "#[bg=#87afaf,fg=#78a9ff]#[bg=#87afaf,fg=#161616,bold] SCROLL#[bg=#161616,fg=#87afaf]"
+          mode_enter_search  "#[bg=#87afaf,fg=#78a9ff]#[bg=#87afaf,fg=#161616,bold] ENT-SEARCH#[bg=#161616,fg=109]"
+          mode_search        "#[bg=#87afaf,fg=#78a9ff]#[bg=#87afaf,fg=#161616,bold] SEARCH#[bg=#161616,fg=109]"
+          mode_resize        "#[bg=#ffab91,fg=#78a9ff]#[bg=#ffab91,fg=#161616,bold] RESIZE#[bg=#161616,fg=#ffab91]"
+          mode_rename_tab    "#[bg=#ffab91,fg=#78a9ff]#[bg=#ffab91,fg=#161616,bold] RESIZE#[bg=#161616,fg=#ffab91]"
+          mode_rename_pane   "#[bg=#ffab91,fg=#78a9ff]#[bg=#ffab91,fg=#161616,bold] RESIZE#[bg=#161616,fg=#ffab91]"
+          mode_move          "#[bg=#ffaf00,fg=#78a9ff]#[bg=#ffaf00,fg=#161616,bold] MOVE#[bg=#161616,fg=#ffaf00]"
+          mode_session       "#[bg=#673ab7,fg=#78a9ff]#[bg=#673ab7,fg=#161616,bold] SESSION#[bg=#161616,fg=#673ab7]"
+          mode_prompt        "#[bg=175,fg=239]#[bg=175,fg=#161616,bold] PROMPT#[bg=#161616,fg=175]"
+
+          tab_normal              "#[bg=#161616,fg=#161616]#[bg=#161616,fg=#525252] {index} #[bg=#161616,fg=#525252] {name} {floating_indicator}#[bg=#161616,fg=#161616]"
+          tab_normal_fullscreen   "#[bg=#161616,fg=#161616]#[bg=#161616,fg=#525252] {index} #[bg=#161616,fg=#525252] {name} {fullscreen_indicator}#[bg=#161616,fg=#161616]"
+          tab_normal_sync         "#[bg=#161616,fg=#161616]#[bg=#161616,fg=#525252] {index} #[bg=#161616,fg=#525252] {name} {sync_indicator}#[bg=#161616,fg=#161616]"
+          tab_active              "#[bg=#393939,fg=#161616]#[bg=#393939,fg=#ee5396] {index} #[bg=#393939,fg=#ee5396] {name} {floating_indicator}#[bg=#393939,fg=#161616]"
+          tab_active_fullscreen   "#[bg=#393939,fg=#161616]#[bg=#393939,fg=#ee5396] {index} #[bg=#393939,fg=#ee5396] {name} {fullscreen_indicator}#[bg=#393939,fg=#393939]"
+          tab_active_sync         "#[bg=#393939,fg=#161616]#[bg=#393939,fg=#ee5396] {index} #[bg=#393939,fg=#ee5396] {name} {sync_indicator}#[bg=#393939,fg=#393939]"
+          tab_separator           "#[bg=237,fg=223]"
+
+          tab_sync_indicator       ""
+          tab_fullscreen_indicator "󰊓"
+          tab_floating_indicator   "󰹙"
+
+          notification_format_unread "#[bg=208,fg=237]#[bg=208,fg=237] {message} #[bg=237,fg=208]"
+          notification_format_no_notifications ""
+          notification_show_interval "10"
+
+          command_host_command    "uname -n"
+          command_host_format     "{stdout}"
+          command_host_interval   "0"
+          command_host_rendermode "static"
+
+          command_user_command    "whoami"
+          command_user_format     "{stdout}"
+          command_user_interval   "0"
+          command_user_rendermode "static"
+
+          datetime          "{format}"
+          datetime_format   "%Y-%m-%d %H:%M"
+          datetime_timezone "Europe/Rome"
+      }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
