@@ -43,6 +43,24 @@ position = [0, 0]
 rerfresh_rate = 75
 scaling = 1.0
 
+[[HomeTop.monitors]]
+name = "eDP-1"
+
+[HomeTop.monitors.state.Enabled]
+dimensions = [2560, 1600]
+position = [0, 1080]
+rerfresh_rate = 165
+scaling = 1.25
+
+[[HomeTop.monitors]]
+name = "HDMI-A-1"
+
+[HomeTop.monitors.state.Enabled]
+dimensions = [1920, 1080]
+position = [0, 0]
+rerfresh_rate = 75
+scaling = 1
+
 [[HomeOneMonitor.monitors]]
 name = "HDMI-A-1"
 
