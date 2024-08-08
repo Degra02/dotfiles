@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins#full-border", commit = "c8b3e39" }, { use = "yazi-rs/plugins#max-preview", commit = "c8b3e39" }]
+deps = [{ use = "yazi-rs/plugins#full-border", commit = "ba2a7d7" }, { use = "yazi-rs/plugins#max-preview", commit = "ba2a7d7" }, { use = "dedukun/relative-motions", commit = "73f5542" }]
 
 [flavor]
 deps = []
