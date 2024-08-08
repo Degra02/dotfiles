@@ -13,7 +13,9 @@ keybinds {
         bind "Alt 8" { GoToTab 8; }
         bind "Alt 9" { GoToTab 9; }
 
+        unbind "Ctrl o"
         bind "Alt m" { SwitchToMode "Move"; }
+        bind "Alt o" { SwitchToMode "Session"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -224,7 +226,7 @@ keybinds {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        bind "Ctrl y" { SwitchToMode "Session"; }
+        bind "Alt y" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
