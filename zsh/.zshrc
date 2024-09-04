@@ -74,8 +74,6 @@ alias ta='tmux attach'
 alias f='yazi'
 alias c='clear'
 
-alias rm='trash-put'
-
 ## Zellij
 alias za='zellij a'
 alias zr='zellij run -- '

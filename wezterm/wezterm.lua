@@ -14,8 +14,8 @@ config.font = wezterm.font {
 config.font_size = 16.0
 
 -- theme
-config.window_background_opacity = 0.90
-config.color_scheme = 'Oxocarbon Dark (Gogh)'
+config.window_background_opacity = 0.95
+config.color_scheme = 'Gruvbox dark, hard (base16)'
 
 config.window_padding = {
   left = 2,

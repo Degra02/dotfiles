@@ -14,6 +14,7 @@ keybinds {
         bind "Alt 9" { GoToTab 9; }
 
         unbind "Ctrl o"
+        unbind "Ctrl h"
         bind "Alt m" { SwitchToMode "Move"; }
         bind "Alt o" { SwitchToMode "Session"; }
     }
@@ -378,7 +379,7 @@ serialize_pane_viewport true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "oxocarbon"
+theme "gruvbox"
 
 theme_dir "/home/degra/.config/zellij/themes"
 
@@ -386,7 +387,7 @@ theme_dir "/home/degra/.config/zellij/themes"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "oxocarbon"
+default_layout "gruvbox"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
