@@ -2,4 +2,4 @@
 deps = [{ use = "yazi-rs/plugins:full-border", rev = "ba2a7d7" }, { use = "yazi-rs/plugins:max-preview", rev = "ba2a7d7" }, { use = "dedukun/relative-motions", rev = "73f5542" }, { use = "Rolv-Apneseth/starship", rev = "20d5a4d" }]
 
 [flavor]
-deps = [{ use = "dangooddd/kanagawa", rev = "b32f205" }]
+deps = [{ use = "dangooddd/kanagawa", rev = "b32f205" }, { use = "bennyyip/gruvbox-dark", rev = "c204853" }]
