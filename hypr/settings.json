@@ -1,0 +1,8 @@
+{
+  "custom-color": "#83a598",
+  "swww-anim": "wipe",
+  "color-scheme": "dark",
+  "generation-scheme": "tonalSpot",
+  "wallpaper-engine": "swww",
+  "hyprpaper-tpl": "preload = WALLPAPER\n  wallpaper = ,WALLPAPER\n splash = false"
+}

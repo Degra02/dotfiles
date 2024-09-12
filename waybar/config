@@ -8,13 +8,12 @@
       "tooltip": false,
     },
     "hyprland/workspaces": {
-      "format": "{name}",
-      "format": "{icon}",
+      "format": "{name} {icon}",
       "tooltip": true,
       "all-outputs": true,
       "format-icons": {
         "active": "",
-        "default": ""
+        "default": "."
       }
     },
     "custom/spotify": {
@@ -46,7 +45,7 @@
     },
     "memory": {
       "interval": 30,
-      "format": " {}%",
+      "format": " {}%",
       "max-length": 10,
       "on-click": "conky",
     },

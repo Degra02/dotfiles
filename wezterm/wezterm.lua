@@ -14,13 +14,13 @@ config.font = wezterm.font {
 config.font_size = 16.0
 
 -- theme
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.97
 config.color_scheme = 'Gruvbox dark, hard (base16)'
 
 config.window_padding = {
   left = 2,
   right = 2,
-  top = 0,
+  top = 3,
   bottom = 0,
 }
 
