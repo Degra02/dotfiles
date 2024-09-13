@@ -27,8 +27,8 @@ window#waybar {
 #custom-arch {
   font-size: 20px;
   margin-left: 15px;
-  color: #000000;
-  background: linear-gradient(229deg, #19bc92, #c7a3dd, #ebf2aa, #e19788);
+  color: @fg-color;
+  /* background: linear-gradient(229deg, #19bc92, #c7a3dd, #ebf2aa, #e19788); */
   background-size: 800% 800%;
   animation: playing 30s ease infinite;
 }
