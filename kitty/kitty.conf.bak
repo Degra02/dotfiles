@@ -1,0 +1,5 @@
+#!/bin/bash
+include ./kitty-themes/themes/gruvbox_dark.conf
+
+font_family monospace
+
