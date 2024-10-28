@@ -164,8 +164,8 @@ keybinds {
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
-        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt h" "Alt Left" { MoveFocus "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocus "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
         bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
@@ -379,7 +379,7 @@ serialize_pane_viewport true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox"
+theme "dracula"
 
 theme_dir "/home/degra/.config/zellij/themes"
 
@@ -387,7 +387,7 @@ theme_dir "/home/degra/.config/zellij/themes"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "gruvbox"
+default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

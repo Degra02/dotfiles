@@ -13,6 +13,10 @@ window#waybar {
   background: transparent;
 }
 
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
 #custom-arch, #workspaces {
   border-radius: 12px;
   background-color: @bg-color;
@@ -72,7 +76,8 @@ window#waybar {
   padding-right: 10px;
   margin-right: 15px;
 
-  background: linear-gradient(229deg, #19bc92, #c7a3dd, #ebf2aa, #e19788);
+  background: #19be99;
+  /* background: linear-gradient(229deg, #19bc92, #c7a3dd, #ebf2aa, #e19788); */
   background-size: 800% 800%;
 
   animation: playing 15s ease infinite;
@@ -104,7 +109,8 @@ window#waybar {
 
 #bluetooth.connected {
   color: #ffffff;
-  animation: bluetooth_connected_animation 15s linear infinite;
+  background-color: #085ca8;
+  /* animation: bluetooth_connected_animation 15s linear infinite; */
 }
 
 @keyframes bluetooth_connected_animation {

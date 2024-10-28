@@ -5,13 +5,17 @@ linemode = "permissions"
 
 [preview]
 ueberzug_scale = 2.0
-ueberzug_offset = [-40, 8, 0.0, 0.0] 
+ueberzug_offset = [20, 10, 0.0, 0.0]
 
 [plugin]
 prepend_previewers = [
   { name = "*.md", run = "glow" },
   { mime = "text/csv", run = "miller"},
   { mime = "audio/*",   run = "exifaudio"},
+
+  # Media previewer
+  { mime = "{image,audio,video}/*", run = "mediainfo"},
+  { mime = "application/x-subrip", run = "mediainfo"},
 
   # Archive previewer
 	{ mime = "application/*zip",            run = "ouch" },
