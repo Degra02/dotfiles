@@ -17,6 +17,7 @@ keybinds {
         unbind "Ctrl h"
         bind "Alt m" { SwitchToMode "Move"; }
         bind "Alt o" { SwitchToMode "Session"; }
+        // bind "Ctrl Backspace" { SendKey "\u001b[127;5u"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -177,7 +178,7 @@ keybinds {
         //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
         //         name "move_focus_or_tab";
         //         payload "left";
-        // 
+        //
         //         // Plugin Configuration
         //         move_mod "ctrl"; // Optional, should be added on every command if you want to use it
         //         resize_mod "alt"; // Optional, should be added on every command if you want to use it
@@ -188,17 +189,17 @@ keybinds {
         //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
         //         name "move_focus";
         //         payload "down";
-        // 
+        //
         //         move_mod "ctrl";
         //         resize_mod "alt";
         //     };
         // }
-        // 
+        //
         // bind "Ctrl k" {
         //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
         //         name "move_focus";
         //         payload "up";
-        // 
+        //
         //         move_mod "ctrl";
         //         resize_mod "alt";
         //     };
@@ -208,7 +209,7 @@ keybinds {
         //     MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
         //         name "move_focus_or_tab";
         //         payload "right";
-        // 
+        //
         //         move_mod "ctrl";
         //         resize_mod "alt";
         //     };
@@ -319,25 +320,11 @@ plugins {
       }
 }
 
-// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
-// eg. when terminal window with an active zellij session is closed
-// Options:
-//   - detach (Default)
-//   - quit
-//
-// on_force_close "quit"
+on_force_close "detach"
 
-//  Send a request for a simplified ui (without arrow fonts) to plugins
-//  Options:
-//    - true
-//    - false (Default)
-//
-// simplified_ui true
+simplified_ui false
 
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-//
-// default_shell "fish"
+default_shell "zsh"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -348,7 +335,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -376,18 +363,15 @@ serialize_pane_viewport true
 //
 // scrollback_lines_to_serialize 10000
 
-// Choose the theme that is specified in the themes section.
-// Default: default
-//
-theme "dracula"
 
 theme_dir "/home/degra/.config/zellij/themes"
 
+theme "dracula"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "default"
+default_layout "custom"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
