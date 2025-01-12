@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "ba2a7d7" }, { use = "yazi-rs/plugins:max-preview", rev = "ba2a7d7" }, { use = "dedukun/relative-motions", rev = "73f5542" }, { use = "Rolv-Apneseth/starship", rev = "20d5a4d" }, { use = "Reledia/glow", rev = "4e016fa" }, { use = "Ape/mediainfo", rev = "c69314e" }, { use = "Tyarel8/video-ffmpeg", rev = "fe26a18" }]
+deps = [{ use = "yazi-rs/plugins:full-border", rev = "600614a" }, { use = "yazi-rs/plugins:max-preview", rev = "600614a" }, { use = "dedukun/relative-motions", rev = "df97039" }, { use = "Rolv-Apneseth/starship", rev = "4053c8c" }, { use = "Reledia/glow", rev = "5ce76dc" }, { use = "Ape/mediainfo", rev = "df17c4f" }, { use = "Tyarel8/video-ffmpeg", rev = "1250b85" }, { use = "Ape/smart-enter", rev = "2ab3c5c" }]
 
 [flavor]
-deps = [{ use = "dangooddd/kanagawa", rev = "b32f205" }, { use = "bennyyip/gruvbox-dark", rev = "c204853" }]
+deps = [{ use = "dangooddd/kanagawa", rev = "d98f0c3" }, { use = "bennyyip/gruvbox-dark", rev = "b4cc9f2" }]
