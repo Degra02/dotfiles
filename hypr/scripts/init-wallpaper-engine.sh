@@ -12,7 +12,8 @@ if [ "$wallpaper_engine" == "swww" ]; then
     swww-daemon
     swww-daemon --format xrgb
     sleep 0.5
-    python -O ~/dotfiles/hypr/scripts/wallpaper.py -P
+    swww img "$HOME/.config/hypr/wallpapers/Lowpoly_Street.png"
+    # python -O ~/dotfiles/hypr/scripts/wallpaper.py -P
 elif [ "$wallpaper_engine" == "hyprpaper" ]; then
     # hyprpaper
     echo ":: Using hyprpaper"
