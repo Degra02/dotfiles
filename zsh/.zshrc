@@ -14,14 +14,19 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+# xdg
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+
+# Home manager
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 # Environment
 export EDITOR=nvim
 export PAGER=bat
 
-# atac
-export ATAC_MAIN_DIR="$HOME/.config/atac"
-export ATAC_KEY_BINDINGS="$ATAC_MAIN_DIR/keybindings.toml"
+# miniconda
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 # vim mode
 export ZVM_VI_EDITOR=nvim
@@ -45,6 +50,8 @@ export QT_ENABLE_HIGHDPI_SCALING=1
 export CUDA_PATH="/opt/cuda"
 export NVCC_PREPEND_FLAGS='-ccbin /opt/cuda/bin'
 
+# glow.yazi
+export CLICOLOR_FORCE=1
 
 # Plugins
 # zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -61,12 +68,14 @@ zinit light ziglang/shell-completions
 
 # Aliases
 alias vim=nvim
+alias chad='NVIM_APPNAME=nvim-chad nvim'
+
 alias l='eza --icons=auto -l'
 alias ls='eza --icons=auto'
 alias la='eza --icons=auto -la'
 alias lar='eza --icons=auto -la -R'
 alias tp='trash-put'
-alias cd='z' 
+alias cd='z'
 alias zq='zoxide query -i'
 alias ..='z ..'
 alias ...='z ...'
@@ -78,6 +87,10 @@ alias c='clear'
 alias za='zellij a'
 alias zr='zellij run -- '
 alias zrf='zellij run -f --'
+
+# Git
+alias gits='git status'
+alias gitc='git commit'
 
 # Load completions
 autoload -U compinit && compinit
@@ -152,4 +165,6 @@ eval "$(direnv hook zsh)"
 # eval "$(atuin init zsh)"
 # bindkey '^r' atuin-search-viins
 # bindkey '^r' atuin-search-vicmd
+
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
