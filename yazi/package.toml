@@ -1,5 +1,49 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "6418698" }, { use = "yazi-rs/plugins:max-preview", rev = "6418698" }, { use = "dedukun/relative-motions", rev = "df97039" }, { use = "Rolv-Apneseth/starship", rev = "af8bf6f" }, { use = "Reledia/glow", rev = "5ce76dc" }, { use = "Ape/mediainfo", rev = "df17c4f" }, { use = "Tyarel8/video-ffmpeg", rev = "1250b85" }, { use = "Ape/smart-enter", rev = "2ab3c5c" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "0725851"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
-[flavor]
-deps = [{ use = "dangooddd/kanagawa", rev = "d98f0c3" }, { use = "bennyyip/gruvbox-dark", rev = "b4cc9f2" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "0725851"
+hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "0d9c8cf"
+hash = "561ad872c77b95360c2657c5e8d395ed"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d1cd0a3"
+hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
+
+[[plugin.deps]]
+use = "Ape/mediainfo"
+rev = "df17c4f"
+hash = "74c2b0063f30c6b4e4ede533f9ca03f2"
+
+[[plugin.deps]]
+use = "Tyarel8/video-ffmpeg"
+rev = "1250b85"
+hash = "54a2158dde0bf6ecb377bd71c9cdcdf9"
+
+[[plugin.deps]]
+use = "Ape/smart-enter"
+rev = "7b84c89"
+hash = "43eb1a1f2291795fb5b0b2ce1206ebee"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "d98f0c3"
+hash = "cada780385f75abbcfbf5343256b441"
+
+[[flavor.deps]]
+use = "bennyyip/gruvbox-dark"
+rev = "b4cc9f2"
+hash = "f44c42bcbed3c8564100e45e2fe3649a"

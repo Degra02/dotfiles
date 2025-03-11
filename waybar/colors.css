@@ -1,2 +1,7 @@
-@define-color bg-color #1f1f28;
-@define-color fg-color #f2f2f2;
+@define-color bg0   #282a36;
+@define-color bg1   #282a36;
+@define-color tip   #FFFFFF;
+@define-color tip2  #1e1e1e;
+@define-color text #f8f8f2;
+@define-color accent #bd93f9;
+@define-color accent2 #000000;

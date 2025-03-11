@@ -11,11 +11,11 @@ config.font = wezterm.font {
   family = "JetBrains Mono",
 }
 
-config.font_size = 16.0
+config.font_size = 13.0
 
 -- theme
 config.window_background_opacity = 0.97
-config.color_scheme = 'Gruvbox dark, hard (base16)'
+config.color_scheme = 'Dracula (Official)'
 
 config.window_padding = {
   left = 2,
