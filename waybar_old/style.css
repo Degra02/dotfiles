@@ -1,0 +1,140 @@
+@import "colors.css";
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+    /* border-radius: 20px 20px 20px 20px; */
+}
+
+window#waybar {
+    /* background: rgba(21, 18, 27, 0); */
+    background: #181818;
+    color: #cdd6f4;
+}
+
+#tooltip {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+    background: @tip2;
+    color: @tip;
+    /* border-radius: 20px; */
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #cdd6f4;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #a6e3a1;
+}
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #eba0ac;
+    border-radius: 1px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #fe8019;
+    /* border-radius: 20px; */
+}
+
+#workspaces button:hover {
+    background: #11111b;
+    color: #cdd6f4;
+    /* border-radius: 20px; */
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #f8f8f2;
+    margin: 3px;
+    /* border-radius: 20px; */
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @bg0;
+}
+
+#workspaces button:hover {
+    background: @bg1;
+    color: @accent;
+}
+
+#custom-spotify,
+#custom-notification,
+#clock,
+#battery,
+#pulseaudio,
+#tray,
+#backlight,
+#workspaces {
+    background: @bg0;
+    padding: 0px 10px;
+    margin: 7px 0px;
+    color: @text;
+    /* border-radius: 15px; */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#tray {
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+}
+
+#workspaces {
+    background: @bg1;
+    padding-right: 10px;
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+#clock {
+    color: @text;
+    /* border-radius: 15px; */
+    margin-left: 5px;
+}
+
+#pulseaudio,
+#battery{
+    color: @text;
+}
+
+#custom-spotify {
+    background: @accent;
+    color: @bg0;
+    margin-right: 10px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border: 3px solid #000000;
+}
+
+#custom-notification {
+    color: @text;
+    /* border-radius: 15px; */
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#network {
+    color: @text;
+    background: @bg1;
+    padding-right: 10px;
+    padding-left: 5px;
+    /* border-radius: 20px; */
+    margin: 7px 0px;
+}
