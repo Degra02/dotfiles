@@ -15,3 +15,4 @@ function fish_user_key_bindings
 end
 
 zoxide init fish | source
+starship init fish | source
