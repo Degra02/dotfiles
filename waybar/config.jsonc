@@ -16,7 +16,8 @@
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"clock#3",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark",
+    "custom/spotify"
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
@@ -55,6 +56,15 @@
         "(.*) - fish": "> [$1]"
     },
     "separate-outputs": true
+  },
+
+  "custom/spotify": {
+      "exec": "/usr/bin/python3 /home/degra/.config/waybar/scripts/mediaplayer.py",
+      "format": " {}",
+      "return-type": "json",
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
   },
 
 	"custom/left-arrow-dark": {

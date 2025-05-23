@@ -5,3 +5,8 @@ keybind=clear
 
 theme = Oxocarbon
 
+window-padding-y = 0
+window-padding-x = 2,2
+
+copy-on-select = true
+confirm-close-surface = false
