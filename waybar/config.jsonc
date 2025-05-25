@@ -1,4 +1,4 @@
-{
+  {
 	"layer": "top",
 	"position": "top",
 
@@ -33,7 +33,7 @@
 		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"disk",
+		"network",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -49,6 +49,7 @@
     "on-click": "activate"
   },
 
+
   "hyprland/window": {
     "format": "{}",
     "rewrite": {
@@ -58,9 +59,18 @@
     "separate-outputs": true
   },
 
+  "network": {
+    "interface": "wlo1",
+    "format": " {ifname}",
+    "format-wifi": "   {essid} {ipaddr}/{cidr}",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-disconnected": "󰖪 No Network",
+    "tooltip": false
+  },
+
   "custom/spotify": {
       "exec": "/usr/bin/python3 /home/degra/.config/waybar/scripts/mediaplayer.py",
-      "format": " {}",
+      "format": "{}",
       "return-type": "json",
       "on-click": "playerctl play-pause",
       "on-scroll-up": "playerctl next",

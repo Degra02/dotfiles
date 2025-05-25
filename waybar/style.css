@@ -60,6 +60,10 @@ window#waybar {
 #battery {
 	color: #d0d0d0;
 }
+
+#network {
+	color: #d0d0d0;
+}
 #disk {
 	color: #c0c0c0;
 }
