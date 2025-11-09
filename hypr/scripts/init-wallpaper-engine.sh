@@ -9,10 +9,10 @@ wallpaper_engine=$(jq -r '.["wallpaper-engine"]' "$settings_file")
 if [ "$wallpaper_engine" == "swww" ]; then
     # swww
     echo ":: Using swww"
-    swww-daemon
+    killall swww-daemon
     swww-daemon --format xrgb
     sleep 0.5
-    swww img "$HOME/.config/hypr/wallpapers/Lowpoly_Street.png"
+    swww img "$HOME/.config/hypr/wallpapers/red-strings.png"
     # python -O ~/dotfiles/hypr/scripts/wallpaper.py -P
 elif [ "$wallpaper_engine" == "hyprpaper" ]; then
     # hyprpaper
