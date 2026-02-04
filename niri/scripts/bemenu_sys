@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+case "$(printf "kill\nlock\nzzz\nlogout\nreboot\nshutdown" | bemenu -i -c -l 6 --fn 'JetBrains Mono Nerd Font 15' -W 0.3 -B 1)" in
+	kill) ps -u "$USER" -o pid,comm,%cpu,%mem | bemenu -i -c -l 10 --fn 'JetBrains Mono Nerd Font 15' -W 0.3 -B 1 -p Kill: | awk '{print $1}' | xargs -r kill ;;
+  lock) hyprlock & ;;
+	zzz) killall hyprlock; systemctl suspend && hyprlock ;;
+  logout) quit ;;
+	reboot) systemctl reboot -i ;;
+	shutdown) shutdown now ;;
+	*) exit 1 ;;
+esac

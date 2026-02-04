@@ -37,8 +37,11 @@ window-rule {
 }
 
 workspace "terminal"
-workspace "social"
 
+window-rule {
+    match at-startup=true app-id="alacritty"
+    open-on-workspace "terminal"
+}
 
 
 layout {
@@ -117,13 +120,13 @@ animations {
     }
 }
 
-// open the Firefox picture-in-picture player as floating by default.
+// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
-// remove round corners for all windows
+// Example: enable rounded corners for all windows.
 window-rule {
     geometry-corner-radius 0
     clip-to-geometry true
@@ -146,27 +149,6 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    match app-id="Proton Mail"
-    block-out-from "screen-capture"
-    open-on-workspace "social"
-}
-
-window-rule {
-    match at-startup=true app-id="Alacritty"
-    open-on-workspace "terminal"
-}
-
-window-rule {
-    match at-startup=true app-id="org.telegram.desktop"
-    open-on-workspace "social"
-}
-
-window-rule {
-    match at-startup=true app-id="discord"
-    open-on-workspace "social"
-}
-
 binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -184,14 +166,15 @@ binds {
 
     Mod+D { spawn "fuzzel"; }
     Mod+Escape { spawn "hyprlock"; }
-    Mod+Shift+Escape { spawn "~/.config/niri/scripts/bemenu_sys"; }
-
     // Mod+E { spawn "nautilus"; }
+    // Mod+Escape { spawn "ignis" "toggle" "PowerMenu"; }
+    // Mod+I { spawn "ignis" "toggle-window" "Settings"; }
+    // Mod+A { spawn "ignis" "toggle-window" "QuickCenter"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
@@ -269,7 +252,7 @@ binds {
 
     Mod+1 { focus-workspace "browser"; }
     Mod+2 { focus-workspace "terminal"; }
-    Mod+3 { focus-workspace "social"; }
+    Mod+3 { focus-workspace 3; }
     Mod+4 { focus-workspace 4; }
     Mod+5 { focus-workspace 5; }
     Mod+6 { focus-workspace 6; }
@@ -278,7 +261,7 @@ binds {
     Mod+9 { focus-workspace 9; }
     Mod+Shift+1 { move-column-to-workspace "browser"; }
     Mod+Shift+2 { move-column-to-workspace "terminal"; }
-    Mod+Shift+3 { move-column-to-workspace "social"; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
     Mod+Shift+4 { move-column-to-workspace 4; }
     Mod+Shift+5 { move-column-to-workspace 5; }
     Mod+Shift+6 { move-column-to-workspace 6; }
@@ -323,8 +306,9 @@ binds {
     // Mod+Alt+R { spawn "ignis" "run-command" "recorder-record-portal"; }
 }
 
-// background
 layer-rule {
+    // This is for swaybg; change for other wallpaper tools.
+    // Find the right namespace by running niri msg layers.
     match namespace="swww-daemon"
     place-within-backdrop true
 }
@@ -343,11 +327,5 @@ switch-events {
     // lid-open { spawn "notify-send"}
 }
 
+spawn-at-startup "ignis" "init"
 spawn-at-startup "swww-daemon"
-
-spawn-at-startup "alacritty"
-spawn-at-startup "org.telegram.desktop"
-spawn-at-startup "discord"
-spawn-at-startup "Proton Mail"
-
-include "dms/outputs.kdl"
